@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+* ===============
+* === UTILITY ===
+* ===============
+*/
+:root {
+    --bgColor: #f4f6e9;
+}
+@keyframes scrollBG {
+    0% {background-position: 0px 0px;}
+    100% {background-position: -648px 612px;}
+}
+
+/*
+* ==============
+* === MOBILE ===
+* ==============
+*/
+
+body {
+    background-image: url(../assets/images/wargrooveTile.png);
+    image-rendering: pixelated;  /* Makes sure the image looks crisp at any scale */
+    image-rendering: crisp-edges; /* Fallback for older browsers */
+    background-size: auto 102px;
+    background-position: 0px 0px;
+    animation-name: scrollBG;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    /*Set the main box to the center*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+main {
+    background-color: var(--bgColor);
+    padding: 1rem;
+    width: 95%;
+    max-width: 75rem;
+    min-height: 95vh;
+    border: 0.5rem #ad855a solid;
+    border-radius: 0.5rem;
+    
+}
+main > * {
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+
+#logo {
+    width: 15rem; height: auto;
+}
+#logo img {
+    width: 100%; height: auto;
+}
+#logo h1 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.half {
+    text-align: center;
+    border: 0.125rem #ad855a solid;
+    border-radius :0.5rem;
+}
+.half p {
+    font-weight: bold;
+}

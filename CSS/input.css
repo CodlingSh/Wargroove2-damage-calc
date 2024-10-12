@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+* ===============
+* === UTILITY ===
+* ===============
+*/
+:root {
+    --bgColor: #f4f6e9;
+}
+@keyframes scrollBG {
+    0% {background-position: 0px 0px;}
+    100% {background-position: -648px 612px;}
+}
+
+/*
+* ==============
+* === MOBILE ===
+* ==============
+*/
+
+body {
+    background-image: url(../assets/images/wargrooveTile.png);
+    image-rendering: pixelated;  /* Makes sure the image looks crisp at any scale */
+    image-rendering: crisp-edges; /* Fallback for older browsers */
+    background-size: auto 102px;
+    background-position: 0px 0px;
+    animation-name: scrollBG;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    /*Set the main box to the center*/
+    /*display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;*/
+}
+
+main > * {
+    margin: 0 auto;
+}
