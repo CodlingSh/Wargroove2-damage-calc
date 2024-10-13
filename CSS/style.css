@@ -566,6 +566,10 @@ video {
   display: flex;
 }
 
+.h-\[100lvh\] {
+  height: 100lvh;
+}
+
 .min-h-\[95vh\] {
   min-height: 95vh;
 }
@@ -618,19 +622,9 @@ video {
   border-bottom-width: 4px;
 }
 
-.border-rose-400 {
-  --tw-border-opacity: 1;
-  border-color: rgb(251 113 133 / var(--tw-border-opacity));
-}
-
 .border-wargroove-brown {
   --tw-border-opacity: 1;
   border-color: rgb(173 133 90 / var(--tw-border-opacity));
-}
-
-.bg-\[\#f4f0e9\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(244 240 233 / var(--tw-bg-opacity));
 }
 
 .bg-wargroove-white {
