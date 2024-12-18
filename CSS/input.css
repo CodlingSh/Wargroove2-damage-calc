@@ -41,3 +41,13 @@ body {
 main > * {
     margin: 0 auto;
 }
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]:checked + label {
+    background-color: #10ac84; /* Your selected color */
+    color: white; /* Optional: change text color */
+    border-color: #007a5e; /* Optional: change border color */
+}
