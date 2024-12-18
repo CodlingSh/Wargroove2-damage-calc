@@ -3,25 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wargroove Damage Calculator</title>
     <link href="/CSS/style.css" rel="stylesheet">
+    <script src="scripts/main.js" defer></script>
+    <title>Wargroove Damage Calculator</title>
 </head>
 <body class="flex items-center justify-center min-h-svh relative">
 
-    <div id="dimming_layer" class="h-[100lvh] w-full absolute bg-black opacity-0 z-10"></div>
+    <div id="dimming_layer" class="h-[100lvh] w-full absolute bg-black opacity-0 z-10 pointer-events-none"></div>
 
     <main class="bg-wargroove-white w-[95%] max-w-7xl p-4 min-h-[95vh] rounded-lg border-4 border-wargroove-brown">  
         <div id="logo" class="flex justify-between w-3/4 max-w-64 mb-1">
             <img id="logo" src="/assets/images/wg2.png" width="227" height="126" class="w-full">
             <h1 class="font-bold text-2xl">Damage Calulator</h1>
         </div>
+
         <div id="units" class="text-center text-2xl">
             <div id="attacker" class="w-[95%] mb-4">
                 <p class="border-b-4 border-wargroove-brown">Attacker</p>
+                <div class="unit_container flex flex-row">
+                    <div id="attacking_unit">
+                        <img src="https://placehold.co/64" width="64" height="64" alt="Attacking Unit">
+                    </div>
+                    <div id="attacking_env">
+                        <img src="https://placehold.co/64" width="64" height="64" alt="Environment of the Attacker">
+                    </div>
+                </div>
             </div>
             <!-- MENU FOR SELECTING ATTACKING UNIT -->
-            <div class="fixed /*translate-y-offscreen*/ p-4 left-6 top-6 bottom-6 right-6 bg-rose-500 z-20 overflow-y-auto">
-                <form class="flex flex-wrap gap-4">
+            <div id="attack_menu" class="fixed translate-y-offscreen p-4 left-2 top-2 bottom-2 right-2 bg-rose-500 z-20 overflow-y-auto">
+                <form id="attack_menu_form" class="flex flex-wrap gap-4" id="defending_unit_selector">
                     <input type="radio" name="attacker" id="soldier"><label class="text-base h-28 w-28 bg-slate-500 block" for="soldier">Soldier</label>
                     <input type="radio" name="attacker" id="dog"><label class="text-base h-28 w-28 bg-slate-500 block" for="dog">Dog</label>
                     <input type="radio" name="attacker" id="spearman"><label class="text-base h-28 w-28 bg-slate-500 block" for="spearman">Spearman</label>
@@ -48,7 +58,44 @@
             </div>
             <div id="defender" class="w-[95%] mb-4">
                 <p class="border-b-4 border-wargroove-brown">Defender</p>
+                <div class="unit_container flex flex-row">
+                    <div id="defending_unit">
+                        <img src="https://placehold.co/64" width="64" height="64" alt="Attacking Unit">
+                    </div>
+                    <div id="defending_env">
+                        <img src="https://placehold.co/64" width="64" height="64" alt="Environment of the Attacker">
+                    </div>
+                </div>
             </div>
+
+            <!-- MENU FOR SELECTING DEFENDING UNIT -->
+            <div id="defend_menu" class="fixed translate-y-offscreen p-4 left-2 top-2 bottom-2 right-2 bg-rose-500 z-20 overflow-y-auto">
+                <form class="flex flex-wrap gap-4" id="defending_unit_selector">
+                    <input type="radio" name="attacker" id="soldier"><label class="text-base h-28 w-28 bg-slate-500 block" for="soldier">Soldier</label>
+                    <input type="radio" name="attacker" id="dog"><label class="text-base h-28 w-28 bg-slate-500 block" for="dog">Dog</label>
+                    <input type="radio" name="attacker" id="spearman"><label class="text-base h-28 w-28 bg-slate-500 block" for="spearman">Spearman</label>
+                    <input type="radio" name="attacker" id="archer"><label class="text-base h-28 w-28 bg-slate-500 block" for="archer">Archer</label>
+                    <input type="radio" name="attacker" id="mage"><label class="text-base h-28 w-28 bg-slate-500 block" for="mage">Mage</label>
+                    <input type="radio" name="attacker" id="cavalry"><label class="text-base h-28 w-28 bg-slate-500 block" for="cavalry">Cavalry</label>
+                    <input type="radio" name="attacker" id="ballista"><label class="text-base h-28 w-28 bg-slate-500 block" for="ballista">Ballista</label>
+                    <input type="radio" name="attacker" id="trebuchet"><label class="text-base h-28 w-28 bg-slate-500 block" for="trebuchet">Trebuchet</label>
+                    <input type="radio" name="attacker" id="giant"><label class="text-base h-28 w-28 bg-slate-500 block" for="giant">Giant</label>
+                    <input type="radio" name="attacker" id="rifleman"><label class="text-base h-28 w-28 bg-slate-500 block" for="rifleman">Rifleman</label>
+                    <input type="radio" name="attacker" id="trooper"><label class="text-base h-28 w-28 bg-slate-500 block" for="trooper">Air Trooper</label>
+                    <input type="radio" name="attacker" id="aeronaut"><label class="text-base h-28 w-28 bg-slate-500 block" for="aeronaut">Aeronaut</label>
+                    <input type="radio" name="attacker" id="dragon"><label class="text-base h-28 w-28 bg-slate-500 block" for="dragon">Dragon</label>
+                    <input type="radio" name="attacker" id="amphibian"><label class="text-base h-28 w-28 bg-slate-500 block" for="amphibian">Amphibian</label>
+                    <input type="radio" name="attacker" id="riverboat"><label class="text-base h-28 w-28 bg-slate-500 block" for="riverboat">Riverboat</label>
+                    <input type="radio" name="attacker" id="turtle"><label class="text-base h-28 w-28 bg-slate-500 block" for="turtle">Turtle</label>
+                    <input type="radio" name="attacker" id="harpoon"><label class="text-base h-28 w-28 bg-slate-500 block" for="harpoon">Harpoon Ship</label>
+                    <input type="radio" name="attacker" id="frog"><label class="text-base h-28 w-28 bg-slate-500 block" for="frog">Frog</label>
+                    <input type="radio" name="attacker" id="kraken"><label class="text-base h-28 w-28 bg-slate-500 block" for="kraken">Kraken</label>
+                    <input type="radio" name="attacker" id="warship"><label class="text-base h-28 w-28 bg-slate-500 block" for="warship">Warship</label>
+                    <input type="radio" name="attacker" id="guardian"><label class="text-base h-28 w-28 bg-slate-500 block" for="guardian">Guardian</label>
+                    <input type="radio" name="attacker" id="commander"><label class="text-base h-28 w-28 bg-slate-500 block" for="commander">Commander</label>
+                </form>
+            </div>
+
         </div>
     </main>
     
