@@ -20,6 +20,10 @@ function showMenu(isAttacking) {
 }
 
 function updateForm(isUnit, isAttacking) {
+    let menu
+    const currSelections;
+    const currSelectionImg;
+    
     if (isUnit) {
         let menu = isAttacking ? document.getElementById("attack_menu") : document.getElementById("defend_menu");
         const currSelections = isAttacking ? document.getElementsByName("attacker") : document.getElementsByName("defender");
