@@ -3,6 +3,18 @@
 @tailwind utilities;
 
 /*
+* ============
+* === FONT ===
+* ============
+*/
+.pixelify-sans-retrofont {
+  font-family: "Pixelify Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*
 * ===============
 * === UTILITY ===
 * ===============
@@ -13,6 +25,35 @@
 @keyframes scrollBG {
     0% {background-position: 0px 0px;}
     100% {background-position: -648px 612px;}
+}
+
+/* Remove arrows from number input */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Firefox */
+input[type=number] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+/* Triangles for health boxes */
+.triangle-left {
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-right: 100px solid #a47750;
+    border-bottom: 50px solid transparent;
+}
+.triangle-right {
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-left: 100px solid #a47750;
+    border-bottom: 50px solid transparent;
 }
 
 /*
@@ -36,6 +77,10 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;*/
+    font-family: "Pixelify Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
 main > * {
