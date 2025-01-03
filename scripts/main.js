@@ -59,18 +59,13 @@ function updateForm(isUnit, isAttacking) {
     // Update the GUI and update state
     if (isUnit) {
         currSelectionImg.src = isAttacking ? "/assets/images/sprites/Cherrystone/" + selection + ".png" :  "/assets/images/sprites/Felheim/" + selection + ".png";
-        if (isAttacking) formState.attackUnit = selection 
+        if (isAttacking) formState.attackUnit = selection;
         else formState.defendUnit = selection;
     }
     else {
         currSelectionImg.src = "/assets/images/terrain/" + selection + ".png";
-        if (isAttacking) formState.attackTerrain = selection.replace("/(sheild|danger)\d*/g", (match) => {
-            console.log(match);
-        })
-        else formState.defendTerrain = Number(selection.replace("/sheild|danger/g", (match) => {
-            if (match === "sheild") return "";
-            if (match === "danger") return "-";
-        })); 
+        if (isAttacking) formState.attackTerrain = convertDefenceValue(selection);
+        else formState.defendTerrain = convertDefenceValue(selection);
     }
 
     console.log(formState);
@@ -81,6 +76,16 @@ function updateForm(isUnit, isAttacking) {
         console.log("time out set");
         console.log(menu);
     }, 100);
+}
+
+function convertDefenceValue(defenceString) {
+    let value = Number(defenceString[defenceString.length - 1]);
+
+    if (defenceString.startsWith("danger")) {
+        value *= -1;
+    }
+
+    return value;
 }
 
 // Event handlers
