@@ -68,8 +68,6 @@ function updateForm(isUnit, isAttacking) {
         else formState.defendTerrain = convertDefenceValue(selection);
     }
 
-    console.log(formState);
-
     // Readd class after 250ms
     setTimeout(() => {
         menu.classList.add("translate-y-offscreen");
@@ -86,6 +84,10 @@ function convertDefenceValue(defenceString) {
     }
 
     return value;
+}
+
+function calculateDamage(power, critical, atkHealth, multiplier, defHealth, terrainDefence) {
+    return power * critical * atkHealth * multiplier * (1 - (defHealth * terrainDefence/10) )
 }
 
 // Event handlers
