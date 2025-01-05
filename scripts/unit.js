@@ -33,7 +33,11 @@ const soldierMatrix = {
     "Guardian": 10,
     "Villager": 60,
     "Building": 40,
-    "Stronghold": 22
+    "Stronghold": 22,
+    "Ballon": null,
+    "Aeronaut": null,
+    "Sky Rider": null,
+    "Dragon": null
 };
 
 const dogMatrix = {
@@ -62,7 +66,11 @@ const dogMatrix = {
     "Guardian": 10,
     "Villager": 80,
     "Building": 25,
-    "Stronghold": 15
+    "Stronghold": 15,
+    "Ballon": null,
+    "Aeronaut": null,
+    "Sky Rider": null,
+    "Dragon": null
 };
 
 const spearmanMatrix = {
@@ -91,7 +99,11 @@ const spearmanMatrix = {
     "Guardian": 15,
     "Villager": 80,
     "Building": 55,
-    "Stronghold": 30
+    "Stronghold": 30,
+    "Ballon": null,
+    "Aeronaut": null,
+    "Sky Rider": null,
+    "Dragon": null
 };
 
 const archerMatrix = {
@@ -120,7 +132,11 @@ const archerMatrix = {
     "Guardian": 10,
     "Villager": 75,
     "Building": 25,
-    "Stronghold": 15
+    "Stronghold": 15,
+    "Ballon": 25,
+    "Aeronaut": 35,
+    "Sky Rider": 25,
+    "Dragon": 15
 };
 
 const mageMatrix = {
@@ -149,7 +165,11 @@ const mageMatrix = {
     "Guardian": 10,
     "Villager": 105,
     "Building": 40,
-    "Stronghold": 22
+    "Stronghold": 22,
+    "Ballon": 105,
+    "Aeronaut": 145,
+    "Sky Rider": 135,
+    "Dragon": 85
 };
 
 const cavalryMatrix = {
@@ -178,7 +198,11 @@ const cavalryMatrix = {
     "Guardian": 20,
     "Villager": 95,
     "Building": 70,
-    "Stronghold": 37
+    "Stronghold": 37,
+    "Ballon": null,
+    "Aeronaut": null,
+    "Sky Rider": null,
+    "Dragon": null
 };
 
 const ballistaMatrix = {
@@ -207,7 +231,11 @@ const ballistaMatrix = {
     "Guardian": 10,
     "Villager": 45,
     "Building": 35,
-    "Stronghold": 20
+    "Stronghold": 20,
+    "Ballon": 115,
+    "Aeronaut": 135,
+    "Sky Rider": 100,
+    "Dragon": 90
 };
 
 const trebuchetMatrix = {
@@ -236,7 +264,11 @@ const trebuchetMatrix = {
     "Guardian": 30,
     "Villager": 105,
     "Building": 90,
-    "Stronghold": 48
+    "Stronghold": 48,
+    "Ballon": null,
+    "Aeronaut": null,
+    "Sky Rider": null,
+    "Dragon": null
 };
 
 const giantMatrix = {
@@ -265,7 +297,11 @@ const giantMatrix = {
     "Guardian": 20,
     "Villager": 135,
     "Building": 90,
-    "Stronghold": 48
+    "Stronghold": 48,
+    "Ballon": null,
+    "Aeronaut": null,
+    "Sky Rider": null,
+    "Dragon": null
 };
 
 const riflemanMatrix = {
@@ -294,7 +330,11 @@ const riflemanMatrix = {
     "Guardian": 10,
     "Villager": 125,
     "Building": 10,
-    "Stronghold": 8
+    "Stronghold": 8,
+    "Ballon": null,
+    "Aeronaut": null,
+    "Sky Rider": null,
+    "Dragon": null
 };
 
 const airTrooperMatrix = {
@@ -323,7 +363,11 @@ const airTrooperMatrix = {
     "Guardian": 10,
     "Villager": 50,
     "Building": 35,
-    "Stronghold": 20
+    "Stronghold": 20,
+    "Ballon": null,
+    "Aeronaut": null,
+    "Sky Rider": null,
+    "Dragon": null
 };
 
 const aeronautMatrix = {
@@ -352,7 +396,11 @@ const aeronautMatrix = {
     "Guardian": 10,
     "Villager": 70,
     "Building": 40,
-    "Stronghold": 22
+    "Stronghold": 22,
+    "Ballon": 60,
+    "Aeronaut": 60,
+    "Sky Rider": 35,
+    "Dragon": 40
 };
 
 const dragonMatrix = {
@@ -381,7 +429,11 @@ const dragonMatrix = {
     "Guardian": 35,
     "Villager": 125,
     "Building": 70,
-    "Stronghold": 37
+    "Stronghold": 37,
+    "Ballon": null,
+    "Aeronaut": null,
+    "Sky Rider": null,
+    "Dragon": null
 };
 
 const amphibianMatrix = {
@@ -410,7 +462,11 @@ const amphibianMatrix = {
     "Guardian": 10,
     "Villager": 40,
     "Building": 20,
-    "Stronghold": 13
+    "Stronghold": 13,
+    "Ballon": null,
+    "Aeronaut": null,
+    "Sky Rider": null,
+    "Dragon": null
 };
 
 const riverboatMatrix = {
@@ -439,7 +495,11 @@ const riverboatMatrix = {
     "Guardian": 10,
     "Villager": 55,
     "Building": 65,
-    "Stronghold": 35
+    "Stronghold": 35,
+    "Ballon": null,
+    "Aeronaut": null,
+    "Sky Rider": null,
+    "Dragon": null
 };
 
 const turtleMatrix = {
@@ -468,7 +528,11 @@ const turtleMatrix = {
     "Guardian": 10,
     "Villager": 70,
     "Building": null,
-    "Stronghold": null
+    "Stronghold": null,
+    "Ballon": null,
+    "Aeronaut": null,
+    "Sky Rider": null,
+    "Dragon": null
 }
 
 const harpoonShipMatrix = {
@@ -497,7 +561,11 @@ const harpoonShipMatrix = {
     "Guardian": null,
     "Villager": null,
     "Building": null,
-    "Stronghold": null
+    "Stronghold": null,
+    "Ballon": null,
+    "Aeronaut": null,
+    "Sky Rider": null,
+    "Dragon": null
 };
 
 const frogMatrix = {
@@ -526,7 +594,11 @@ const frogMatrix = {
     "Guardian": 10,
     "Villager": 90,
     "Building": 30,
-    "Stronghold": 18
+    "Stronghold": 18,
+    "Ballon": null,
+    "Aeronaut": null,
+    "Sky Rider": null,
+    "Dragon": null
 };
 
 const krakenMatrix = {
@@ -555,7 +627,11 @@ const krakenMatrix = {
     "Guardian": 10,
     "Villager": 70,
     "Building": 30,
-    "Stronghold": 18
+    "Stronghold": 18,
+    "Ballon": null,
+    "Aeronaut": null,
+    "Sky Rider": null,
+    "Dragon": null
 };
 
 const warshipMatrix = {
@@ -584,7 +660,11 @@ const warshipMatrix = {
     "Guardian": 30,
     "Villager": 105,
     "Building": 50,
-    "Stronghold": 27
+    "Stronghold": 27,
+    "Ballon": null,
+    "Aeronaut": null,
+    "Sky Rider": null,
+    "Dragon": null
 };
 
 const guardianMatrix = {
@@ -613,7 +693,11 @@ const guardianMatrix = {
     "Guardian": 45,
     "Villager": 95,
     "Building": 95,
-    "Stronghold": 50
+    "Stronghold": 50,
+    "Ballon": null,
+    "Aeronaut": null,
+    "Sky Rider": null,
+    "Dragon": null
 };
 
 const commanderMatrix = {
@@ -642,7 +726,11 @@ const commanderMatrix = {
     "Guardian": 45,
     "Villager": 100,
     "Building": 75,
-    "Stronghold": 40
+    "Stronghold": 40,
+    "Ballon": null,
+    "Aeronaut": null,
+    "Sky Rider": null,
+    "Dragon": null
 };
 
 const buildingMatrix = {
@@ -671,8 +759,45 @@ const buildingMatrix = {
     "Guardian": 10,
     "Villager": null,
     "Building": null,
-    "Stronghold": null
-};    
+    "Stronghold": null,
+    "Ballon": null,
+    "Aeronaut": 35,
+    "Sky Rider": null,
+    "Dragon": 10
+};
+
+const skyRiderMatrix = {
+    "Soldier": null,
+    "Dog": null,
+    "Spearman": null,
+    "Archer": null,
+    "Mage": null,
+    "Cavalry": null,
+    "Giant": null,
+    "Wagon": null,
+    "Ballista": null,
+    "Trebuchet": null,
+    "Theif": null,
+    "Rifleman": null,
+    "Barge": null,
+    "Riverboat": null,
+    "Turtle": null,
+    "Harpoon Ship": null,
+    "Kraken": null,
+    "Warship": null,
+    "Amphibian": null,
+    "Frog": null,
+    "Air Trooper": null,
+    "Commander": null,
+    "Guardian": null,
+    "Villager": null,
+    "Building": null,
+    "Stronghold": null,
+    "Ballon": 55,
+    "Aeronaut": 65,
+    "Sky Rider": 40,
+    "Dragon": 40
+};
 
 export const units = {
     Soldier: new Unit("soldier", "ground", 1.5, soldierMatrix),
@@ -698,5 +823,6 @@ export const units = {
     Guardian: new Unit("guardian", "special", 1, guardianMatrix),
     Commander: new Unit("commander", "special", 1, commanderMatrix),
     Building: new Unit("building", "building", 1, buildingMatrix),
-    Stronghold: new Unit("stronghold", "building", 1, buildingMatrix)
+    Stronghold: new Unit("stronghold", "building", 1, buildingMatrix),
+    Sky_Rider: new Unit("skyrider", "air", 2, skyRiderMatrix)
 };
