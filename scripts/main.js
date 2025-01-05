@@ -42,9 +42,6 @@ function updateForm(isUnit, isAttacking) {
         currSelectionImg = isAttacking ? document.getElementById("attacking_env") : document.getElementById("defending_env");
     }
 
-    console.log("isUnit: " + isUnit);
-    console.log("isAttacking: " + isAttacking);
-
     // Check to see what unit is selected
     for (const currSelect of currSelections) {
         if (currSelect.checked) {
@@ -52,21 +49,35 @@ function updateForm(isUnit, isAttacking) {
             break;
         }
     }
+
     // if defending, remove the "_d" at the end of ID
     if (isAttacking === false) {
         selection = selection.replace("_d", "");
     }
+
     // Update the GUI and update state
     if (isUnit) {
+        let finalUnit = null;
+
         currSelectionImg.src = isAttacking ? "/assets/images/sprites/Cherrystone/" + selection + ".png" :  "/assets/images/sprites/Felheim/" + selection + ".png";
-        if (isAttacking) formState.attackUnit = selection;
-        else formState.defendUnit = selection;
+        // find Unit object for selection
+        for (const [key] of Object.entries(units)) {
+            if (units[key].name === selection) {
+                finalUnit = units[key];
+                break;
+            } 
+        }
+        // assign to form state
+        if (isAttacking) formState.attackUnit = finalUnit;
+        else formState.defendUnit = finalUnit;
     }
     else {
         currSelectionImg.src = "/assets/images/terrain/" + selection + ".png";
         if (isAttacking) formState.attackTerrain = convertDefenceValue(selection);
         else formState.defendTerrain = convertDefenceValue(selection);
     }
+
+    console.log(formState);
 
     // Readd class after 250ms
     setTimeout(() => {
