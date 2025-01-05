@@ -7,6 +7,39 @@ export default class Unit {
     }
 }
 
+const nullMatrix = {
+    "Soldier": null,
+    "Dog": null,
+    "Spearman": null,
+    "Archer": null,
+    "Mage": null,
+    "Cavalry": null,
+    "Giant": null,
+    "Wagon": null,
+    "Ballista": null,
+    "Trebuchet": null,
+    "Theif": null,
+    "Rifleman": null,
+    "Barge": null,
+    "Riverboat": null,
+    "Turtle": null,
+    "Harpoon Ship": null,
+    "Kraken": null,
+    "Warship": null,
+    "Amphibian": null,
+    "Frog": null,
+    "Air Trooper": null,
+    "Commander": null,
+    "Guardian": null,
+    "Villager": null,
+    "Building": null,
+    "Stronghold": null,
+    "Ballon": null,
+    "Aeronaut": null,
+    "Sky Rider": null,
+    "Dragon": null
+};
+
 const soldierMatrix = {
     "Soldier": 60,
     "Dog": 50,
@@ -824,5 +857,9 @@ export const units = {
     Commander: new Unit("commander", "special", 1, commanderMatrix),
     Building: new Unit("building", "building", 1, buildingMatrix),
     Stronghold: new Unit("stronghold", "building", 1, buildingMatrix),
-    Sky_Rider: new Unit("skyrider", "air", 2, skyRiderMatrix)
+    Sky_Rider: new Unit("skyrider", "air", 2, skyRiderMatrix),
+    Villager: new Unit("villager", "ground", 0, nullMatrix),
+    Ballon: new Unit("ballon", "air", 0, nullMatrix),
+    Wagon: new Unit("wagon", "ground", 0, nullMatrix),
+    Barge: new Unit("barge", "water", 0, nullMatrix)
 };
