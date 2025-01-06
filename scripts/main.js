@@ -1,7 +1,7 @@
 import Unit, { units } from "./unit.js"
 "use strict";
 
-let formState = {} // Global object to keep track of the state of the form
+let formState = {attackUnit: units.Soldier, defendUnit: units.Soldier, attackTerrain: 0, defendTerrain: 0} // Global object to keep track of the state of the form
 
 /**
  * Function to show the menus. Basically just removes a tailwind class
@@ -30,6 +30,7 @@ function updateForm(isUnit, isAttacking) {
     let currSelections = null;
     let currSelectionImg = null;
     let selection = null;
+    let damageValues = null;
     
     if (isUnit) {
         menu = isAttacking ? document.getElementById("attack_menu") : document.getElementById("defend_menu");
@@ -78,6 +79,10 @@ function updateForm(isUnit, isAttacking) {
     }
 
     console.log(formState);
+    //console.log("formstate attacking unit: " + formState[attackUnit]);
+    damageValues = calculateDamage(formState.attackUnit, formState.defendUnit, formState.attackTerrain, formState.defendTerrain);
+
+    document.getElementById("results").children[0].innerHTML = damageValues[0] + " " + damageValues[1]
 
     // Readd class after 250ms
     setTimeout(() => {
@@ -97,8 +102,28 @@ function convertDefenceValue(defenceString) {
     return value;
 }
 
-function calculateDamage(power, critical, atkHealth, multiplier, defHealth, terrainDefence) {
-    return power * critical * atkHealth * multiplier * (1 - (defHealth * terrainDefence/10) )
+function calculateDamage(attackUnit, defenceUnit, attackTerrain, defenceTerrain) {
+    let atkPower = attackUnit.damageMatrix[defenceUnit.name];
+    let defPower = defenceUnit.damageMatrix[attackUnit.name];
+    let atkHealth = Number(document.getElementById("attacker_health").value);
+    let defHealth = Number(document.getElementById("defender_health").value);
+    let atkCritical = 1;
+    let defCritical = 1;
+    let multiplier = 1;
+    let atkDamage = null;
+    let defDamage = null;
+    
+    // Find the damage attacker will do to the enemy
+    defDamage = Math.round(atkPower * atkCritical * atkHealth / 100 * multiplier * (1 - (defHealth / 100 * defenceTerrain / 10)));
+    defHealth -= defDamage
+    if (defHealth <= 0) {
+        atkDamage = 0;
+    }
+    else {
+        atkDamage = Math.round(defPower * defCritical * defHealth / 100 * multiplier * (1 - (atkHealth / 100 * attackTerrain / 10))); 
+    }
+
+    return [defDamage, atkDamage];
 }
 
 // Event handlers
