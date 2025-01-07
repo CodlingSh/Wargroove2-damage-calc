@@ -85,11 +85,19 @@ function updateForm(isUnit, isAttacking) {
     document.getElementById("results").children[0].innerHTML = damageValues[0] + " " + damageValues[1]
 
     // Readd class after 250ms
-    setTimeout(() => {
-        menu.classList.add("translate-y-offscreen");
-        console.log("time out set");
-        console.log(menu);
-    }, 100);
+    // setTimeout(() => {
+    //     menu.classList.add("translate-y-offscreen");
+    //     console.log("time out set");
+    //     console.log(menu);
+    // }, 100);
+}
+
+function hideMenu(e) {
+    console.log(e);
+    // setTimeout(() => {
+    //     e.parentElement.classList.add("translate-y-offscreen");
+    //     console.log("e");
+    // }, 100);
 }
 
 function convertDefenceValue(defenceString) {
@@ -132,8 +140,16 @@ document.getElementById("attacking_unit").addEventListener("click", () => {showM
 document.getElementById("attack_menu_form").addEventListener("change", () => {updateForm(true, true)});
 document.getElementById("defending_unit").addEventListener("click", () => {showMenu(true, false)});
 document.getElementById("defend_menu_form").addEventListener("change", () => {updateForm(true, false)});
-//TERRAINS
+// TERRAINS
 document.getElementById("attacking_env").addEventListener("click", () => {showMenu(false, true)});
 document.getElementById("attack_terrain_menu").addEventListener("change", () => {updateForm(false, true)})
 document.getElementById("defending_env").addEventListener("click", () => {showMenu(false, false)});
 document.getElementById("defend_terrain_menu").addEventListener("change", () => {updateForm(false, false)})
+// UNITS TO CLOSE
+// document.getElementById("attack_menu").children.addEventListener("click", (e) => {hideMenu(e)})
+const attackUnitBtns = document.getElementById("attack_menu").children;
+console.log(attackUnitBtns);
+Array.from(attackUnitBtns).forEach((element) => {
+    // console.log(element);
+    element.addEventListener("click", () => {hideMenu(element)});
+})
