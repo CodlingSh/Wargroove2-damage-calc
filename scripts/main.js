@@ -64,6 +64,7 @@ function updateForm(isUnit, isAttacking) {
         // find Unit object for selection
         for (const [key] of Object.entries(units)) {
             if (units[key].name === selection) {
+                console.log("UNIT ASSIGNED");
                 finalUnit = units[key];
                 break;
             } 
@@ -78,26 +79,31 @@ function updateForm(isUnit, isAttacking) {
         else formState.defendTerrain = convertDefenceValue(selection);
     }
 
-    console.log(formState);
+    // console.log(formState);
     //console.log("formstate attacking unit: " + formState[attackUnit]);
     damageValues = calculateDamage(formState.attackUnit, formState.defendUnit, formState.attackTerrain, formState.defendTerrain);
+    
+    // Add Damage to form
+    document.getElementById("attack_damage").innerHTML = damageValues[0] + "%";
+    document.getElementById("defend_damage").innerHTML = damageValues[1] + "%";
 
-    document.getElementById("results").children[0].innerHTML = damageValues[0] + " " + damageValues[1]
+    // Update results images
+    document.getElementById("atk_result_img").src = "/assets/images/sprites/Cherrystone/" + formState.attackUnit.name + ".png";
+    document.getElementById("def_result_img").src = "/assets/images/sprites/Felheim/" + formState.defendUnit.name + ".png";
 
-    // Readd class after 250ms
-    // setTimeout(() => {
-    //     menu.classList.add("translate-y-offscreen");
-    //     console.log("time out set");
-    //     console.log(menu);
-    // }, 100);
+    console.log(formState);
 }
 
 function hideMenu(e) {
-    console.log(e);
-    // setTimeout(() => {
-    //     e.parentElement.classList.add("translate-y-offscreen");
-    //     console.log("e");
-    // }, 100);
+    console.log(e.parentElement);
+    setTimeout(() => {
+        e.parentElement.parentElement.classList.add("translate-y-offscreen");
+        console.log("e");
+    }, 100);
+}
+
+function test() {
+    console.log("This is firing from the function");
 }
 
 function convertDefenceValue(defenceString) {
@@ -111,8 +117,8 @@ function convertDefenceValue(defenceString) {
 }
 
 function calculateDamage(attackUnit, defenceUnit, attackTerrain, defenceTerrain) {
-    let atkPower = attackUnit.damageMatrix[defenceUnit.name];
-    let defPower = defenceUnit.damageMatrix[attackUnit.name];
+    let atkPower = attackUnit.damageMatrix[defenceUnit.name] === null ? 0 : attackUnit.damageMatrix[defenceUnit.name];
+    let defPower = defenceUnit.damageMatrix[attackUnit.name] === null ? 0 : defenceUnit.damageMatrix[attackUnit.name];
     let atkHealth = Number(document.getElementById("attacker_health").value);
     let defHealth = Number(document.getElementById("defender_health").value);
     let atkCritical = 1;
@@ -120,7 +126,10 @@ function calculateDamage(attackUnit, defenceUnit, attackTerrain, defenceTerrain)
     let multiplier = 1;
     let atkDamage = null;
     let defDamage = null;
-    
+
+    console.log(`Attack Unit: ${attackUnit.name} \nDefence Unit: ${defenceUnit.name}`)
+
+    console.log(`atkPower: ${atkPower} defPower: ${defPower} atkHealth: ${atkHealth} defHealth: ${defHealth} atkCritical: ${atkCritical} defCritical: ${defCritical} multiplier: ${multiplier} atkDamage: ${atkDamage} defDamage: ${defDamage}`);
     // Find the damage attacker will do to the enemy
     defDamage = Math.round(atkPower * atkCritical * atkHealth / 100 * multiplier * (1 - (defHealth / 100 * defenceTerrain / 10)));
     defHealth -= defDamage
@@ -146,10 +155,16 @@ document.getElementById("attack_terrain_menu").addEventListener("change", () => 
 document.getElementById("defending_env").addEventListener("click", () => {showMenu(false, false)});
 document.getElementById("defend_terrain_menu").addEventListener("change", () => {updateForm(false, false)})
 // UNITS TO CLOSE
-// document.getElementById("attack_menu").children.addEventListener("click", (e) => {hideMenu(e)})
-const attackUnitBtns = document.getElementById("attack_menu").children;
+const attackUnitBtns = document.getElementById("attack_menu_form").querySelectorAll("label");
+const defendUnitBtns = document.getElementById("defend_menu_form").querySelectorAll("label");
+const attackTerrainBtns = document.getElementById("attack_terrain_form").querySelectorAll("label");
+const defendTerrainBtns = document.getElementById("defend_terrain_form").querySelectorAll("label");
+const btnArrays = [attackUnitBtns, defendUnitBtns, attackTerrainBtns, defendTerrainBtns];
 console.log(attackUnitBtns);
-Array.from(attackUnitBtns).forEach((element) => {
-    // console.log(element);
-    element.addEventListener("click", () => {hideMenu(element)});
+btnArrays.forEach((btnArray) => {
+    Array.from(btnArray).forEach((element) => {
+        element.addEventListener("click", () => {
+            hideMenu(element);
+        });
+    })
 })
