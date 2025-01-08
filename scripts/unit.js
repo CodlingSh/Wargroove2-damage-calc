@@ -23,12 +23,12 @@ const nullMatrix = {
     "Barge": null,
     "Riverboat": null,
     "Turtle": null,
-    "Harpoon Ship": null,
+    "Harpoon_ship": null,
     "Kraken": null,
     "Warship": null,
     "Amphibian": null,
     "Frog": null,
-    "Air Trooper": null,
+    "Air_trooper": null,
     "Commander": null,
     "Guardian": null,
     "Villager": null,
@@ -36,7 +36,7 @@ const nullMatrix = {
     "Stronghold": null,
     "Ballon": null,
     "Aeronaut": null,
-    "Sky Rider": null,
+    "Sky_rider": null,
     "Dragon": null
 };
 
@@ -56,12 +56,12 @@ const soldierMatrix = {
     "Barge": 15,
     "Riverboat": 40,
     "Turtle": 25,
-    "Harpoon Ship": 20,
+    "Harpoon_ship": 20,
     "Kraken": 20,
     "Warship": 10,
     "Amphibian": 60,
     "Frog": 50,
-    "Air Trooper": 65,
+    "Air_trooper": 65,
     "Commander": 15,
     "Guardian": 10,
     "Villager": 60,
@@ -69,7 +69,7 @@ const soldierMatrix = {
     "Stronghold": 22,
     "Ballon": null,
     "Aeronaut": null,
-    "Sky Rider": null,
+    "Sky_rider": null,
     "Dragon": null
 };
 
@@ -89,12 +89,12 @@ const dogMatrix = {
     "Barge": 25,
     "Riverboat": 50,
     "Turtle": 20,
-    "Harpoon Ship": 20,
+    "Harpoon_ship": 20,
     "Kraken": 30,
     "Warship": 10,
     "Amphibian": 80,
     "Frog": 55,
-    "Air Trooper": 80,
+    "Air_trooper": 80,
     "Commander": 20,
     "Guardian": 10,
     "Villager": 80,
@@ -102,7 +102,7 @@ const dogMatrix = {
     "Stronghold": 15,
     "Ballon": null,
     "Aeronaut": null,
-    "Sky Rider": null,
+    "Sky_rider": null,
     "Dragon": null
 };
 
@@ -122,12 +122,12 @@ const spearmanMatrix = {
     "Barge": 25,
     "Riverboat": 55,
     "Turtle": 50,
-    "Harpoon Ship": 30,
+    "Harpoon_ship": 30,
     "Kraken": 40,
     "Warship": 10,
     "Amphibian": 80,
     "Frog": 105,
-    "Air Trooper": 70,
+    "Air_trooper": 70,
     "Commander": 20,
     "Guardian": 15,
     "Villager": 80,
@@ -135,7 +135,7 @@ const spearmanMatrix = {
     "Stronghold": 30,
     "Ballon": null,
     "Aeronaut": null,
-    "Sky Rider": null,
+    "Sky_rider": null,
     "Dragon": null
 };
 
@@ -155,12 +155,12 @@ const archerMatrix = {
     "Barge": 25,
     "Riverboat": 55,
     "Turtle": 25,
-    "Harpoon Ship": 30,
+    "Harpoon_ship": 30,
     "Kraken": 30,
     "Warship": 25,
     "Amphibian": 75,
     "Frog": 60,
-    "Air Trooper": 50,
+    "Air_trooper": 50,
     "Commander": 10,
     "Guardian": 10,
     "Villager": 75,
@@ -168,7 +168,7 @@ const archerMatrix = {
     "Stronghold": 15,
     "Ballon": 25,
     "Aeronaut": 35,
-    "Sky Rider": 25,
+    "Sky_rider": 25,
     "Dragon": 15
 };
 
@@ -188,12 +188,12 @@ const mageMatrix = {
     "Barge": 30,
     "Riverboat": 50,
     "Turtle": 30,
-    "Harpoon Ship": 40,
+    "Harpoon_ship": 40,
     "Kraken": 30,
     "Warship": 20,
     "Amphibian": 60,
     "Frog": 50,
-    "Air Trooper": 55,
+    "Air_trooper": 55,
     "Commander": 20,
     "Guardian": 10,
     "Villager": 105,
@@ -201,7 +201,7 @@ const mageMatrix = {
     "Stronghold": 22,
     "Ballon": 105,
     "Aeronaut": 145,
-    "Sky Rider": 135,
+    "Sky_rider": 135,
     "Dragon": 85
 };
 
@@ -221,12 +221,12 @@ const cavalryMatrix = {
     "Barge": 40,
     "Riverboat": 100,
     "Turtle": 50,
-    "Harpoon Ship": 70,
+    "Harpoon_ship": 70,
     "Kraken": 65,
     "Warship": 50,
     "Amphibian": 90,
     "Frog": 75,
-    "Air Trooper": 85,
+    "Air_trooper": 85,
     "Commander": 30,
     "Guardian": 20,
     "Villager": 95,
@@ -234,7 +234,7 @@ const cavalryMatrix = {
     "Stronghold": 37,
     "Ballon": null,
     "Aeronaut": null,
-    "Sky Rider": null,
+    "Sky_rider": null,
     "Dragon": null
 };
 
@@ -254,12 +254,12 @@ const ballistaMatrix = {
     "Barge": 25,
     "Riverboat": 45,
     "Turtle": 25,
-    "Harpoon Ship": 30,
+    "Harpoon_ship": 30,
     "Kraken": 20,
     "Warship": 25,
     "Amphibian": 35,
     "Frog": 35,
-    "Air Trooper": 35,
+    "Air_trooper": 35,
     "Commander": 15,
     "Guardian": 10,
     "Villager": 45,
@@ -267,7 +267,7 @@ const ballistaMatrix = {
     "Stronghold": 20,
     "Ballon": 115,
     "Aeronaut": 135,
-    "Sky Rider": 100,
+    "Sky_rider": 100,
     "Dragon": 90
 };
 
@@ -287,12 +287,12 @@ const trebuchetMatrix = {
     "Barge": 85,
     "Riverboat": 105,
     "Turtle": 50,
-    "Harpoon Ship": 80,
+    "Harpoon_ship": 80,
     "Kraken": 80,
     "Warship": 30,
     "Amphibian": 105,
     "Frog": 85,
-    "Air Trooper": 90,
+    "Air_trooper": 90,
     "Commander": 30,
     "Guardian": 30,
     "Villager": 105,
@@ -300,7 +300,7 @@ const trebuchetMatrix = {
     "Stronghold": 48,
     "Ballon": null,
     "Aeronaut": null,
-    "Sky Rider": null,
+    "Sky_rider": null,
     "Dragon": null
 };
 
@@ -320,12 +320,12 @@ const giantMatrix = {
     "Barge": 70,
     "Riverboat": 140,
     "Turtle": 105,
-    "Harpoon Ship": 95,
+    "Harpoon_ship": 95,
     "Kraken": 55,
     "Warship": 85,
     "Amphibian": 135,
     "Frog": 110,
-    "Air Trooper": 120,
+    "Air_trooper": 120,
     "Commander": 40,
     "Guardian": 20,
     "Villager": 135,
@@ -333,7 +333,7 @@ const giantMatrix = {
     "Stronghold": 48,
     "Ballon": null,
     "Aeronaut": null,
-    "Sky Rider": null,
+    "Sky_rider": null,
     "Dragon": null
 };
 
@@ -353,12 +353,12 @@ const riflemanMatrix = {
     "Barge": 10,
     "Riverboat": 50,
     "Turtle": 25,
-    "Harpoon Ship": 25,
+    "Harpoon_ship": 25,
     "Kraken": 30,
     "Warship": 10,
     "Amphibian": 60,
     "Frog": 30,
-    "Air Trooper": 80,
+    "Air_trooper": 80,
     "Commander": 10,
     "Guardian": 10,
     "Villager": 125,
@@ -366,7 +366,7 @@ const riflemanMatrix = {
     "Stronghold": 8,
     "Ballon": null,
     "Aeronaut": null,
-    "Sky Rider": null,
+    "Sky_rider": null,
     "Dragon": null
 };
 
@@ -386,12 +386,12 @@ const airTrooperMatrix = {
     "Barge": 25,
     "Riverboat": 40,
     "Turtle": 15,
-    "Harpoon Ship": 20,
+    "Harpoon_ship": 20,
     "Kraken": 25,
     "Warship": 20,
     "Amphibian": 50,
     "Frog": 40,
-    "Air Trooper": 45,
+    "Air_trooper": 45,
     "Commander": 15,
     "Guardian": 10,
     "Villager": 50,
@@ -399,7 +399,7 @@ const airTrooperMatrix = {
     "Stronghold": 20,
     "Ballon": null,
     "Aeronaut": null,
-    "Sky Rider": null,
+    "Sky_rider": null,
     "Dragon": null
 };
 
@@ -419,12 +419,12 @@ const aeronautMatrix = {
     "Barge": 40,
     "Riverboat": 70,
     "Turtle": 50,
-    "Harpoon Ship": 35,
+    "Harpoon_ship": 35,
     "Kraken": 30,
     "Warship": 50,
     "Amphibian": 70,
     "Frog": 55,
-    "Air Trooper": 90,
+    "Air_trooper": 90,
     "Commander": 20,
     "Guardian": 10,
     "Villager": 70,
@@ -432,7 +432,7 @@ const aeronautMatrix = {
     "Stronghold": 22,
     "Ballon": 60,
     "Aeronaut": 60,
-    "Sky Rider": 35,
+    "Sky_rider": 35,
     "Dragon": 40
 };
 
@@ -452,12 +452,12 @@ const dragonMatrix = {
     "Barge": 115,
     "Riverboat": 150,
     "Turtle": 85,
-    "Harpoon Ship": 90,
+    "Harpoon_ship": 90,
     "Kraken": 75,
     "Warship": 95,
     "Amphibian": 125,
     "Frog": 65,
-    "Air Trooper": 125,
+    "Air_trooper": 125,
     "Commander": 30,
     "Guardian": 35,
     "Villager": 125,
@@ -465,7 +465,7 @@ const dragonMatrix = {
     "Stronghold": 37,
     "Ballon": null,
     "Aeronaut": null,
-    "Sky Rider": null,
+    "Sky_rider": null,
     "Dragon": null
 };
 
@@ -485,12 +485,12 @@ const amphibianMatrix = {
     "Barge": 15,
     "Riverboat": 30,
     "Turtle": 35,
-    "Harpoon Ship": 50,
+    "Harpoon_ship": 50,
     "Kraken": 40,
     "Warship": 10,
     "Amphibian": 30,
     "Frog": 25,
-    "Air Trooper": 35,
+    "Air_trooper": 35,
     "Commander": 10,
     "Guardian": 10,
     "Villager": 40,
@@ -498,7 +498,7 @@ const amphibianMatrix = {
     "Stronghold": 13,
     "Ballon": null,
     "Aeronaut": null,
-    "Sky Rider": null,
+    "Sky_rider": null,
     "Dragon": null
 };
 
@@ -518,12 +518,12 @@ const riverboatMatrix = {
     "Barge": 25,
     "Riverboat": 50,
     "Turtle": 25,
-    "Harpoon Ship": 30,
+    "Harpoon_ship": 30,
     "Kraken": 20,
     "Warship": 30,
     "Amphibian": 40,
     "Frog": 30,
-    "Air Trooper": 55,
+    "Air_trooper": 55,
     "Commander": 15,
     "Guardian": 10,
     "Villager": 55,
@@ -531,7 +531,7 @@ const riverboatMatrix = {
     "Stronghold": 35,
     "Ballon": null,
     "Aeronaut": null,
-    "Sky Rider": null,
+    "Sky_rider": null,
     "Dragon": null
 };
 
@@ -551,12 +551,12 @@ const turtleMatrix = {
     "Barge": 60,
     "Riverboat": 115,
     "Turtle": 55,
-    "Harpoon Ship": 65,
+    "Harpoon_ship": 65,
     "Kraken": 50,
     "Warship": 85,
     "Amphibian": 115,
     "Frog": 95,
-    "Air Trooper": 65,
+    "Air_trooper": 65,
     "Commander": 20,
     "Guardian": 10,
     "Villager": 70,
@@ -564,7 +564,7 @@ const turtleMatrix = {
     "Stronghold": null,
     "Ballon": null,
     "Aeronaut": null,
-    "Sky Rider": null,
+    "Sky_rider": null,
     "Dragon": null
 }
 
@@ -584,12 +584,12 @@ const harpoonShipMatrix = {
     "Barge": 20,
     "Riverboat": 40,
     "Turtle": 65,
-    "Harpoon Ship": 35,
+    "Harpoon_ship": 35,
     "Kraken": 15,
     "Warship": 25,
     "Amphibian": 35,
     "Frog": 25,
-    "Air Trooper": null,
+    "Air_trooper": null,
     "Commander": null,
     "Guardian": null,
     "Villager": null,
@@ -597,7 +597,7 @@ const harpoonShipMatrix = {
     "Stronghold": null,
     "Ballon": null,
     "Aeronaut": null,
-    "Sky Rider": null,
+    "Sky_rider": null,
     "Dragon": null
 };
 
@@ -617,12 +617,12 @@ const frogMatrix = {
     "Barge": 25,
     "Riverboat": 45,
     "Turtle": 25,
-    "Harpoon Ship": 30,
+    "Harpoon_ship": 30,
     "Kraken": 40,
     "Warship": 30,
     "Amphibian": 65,
     "Frog": 55,
-    "Air Trooper": 60,
+    "Air_trooper": 60,
     "Commander": 20,
     "Guardian": 10,
     "Villager": 90,
@@ -630,7 +630,7 @@ const frogMatrix = {
     "Stronghold": 18,
     "Ballon": null,
     "Aeronaut": null,
-    "Sky Rider": null,
+    "Sky_rider": null,
     "Dragon": null
 };
 
@@ -650,12 +650,12 @@ const krakenMatrix = {
     "Barge": 25,
     "Riverboat": 55,
     "Turtle": 25,
-    "Harpoon Ship": 30,
+    "Harpoon_ship": 30,
     "Kraken": 45,
     "Warship": 60,
     "Amphibian": 90,
     "Frog": 70,
-    "Air Trooper": 60,
+    "Air_trooper": 60,
     "Commander": 20,
     "Guardian": 10,
     "Villager": 70,
@@ -663,7 +663,7 @@ const krakenMatrix = {
     "Stronghold": 18,
     "Ballon": null,
     "Aeronaut": null,
-    "Sky Rider": null,
+    "Sky_rider": null,
     "Dragon": null
 };
 
@@ -683,12 +683,12 @@ const warshipMatrix = {
     "Barge": null,
     "Riverboat": null,
     "Turtle": null,
-    "Harpoon Ship": null,
+    "Harpoon_ship": null,
     "Kraken": null,
     "Warship": null,
     "Amphibian": 90,
     "Frog": 75,
-    "Air Trooper": 90,
+    "Air_trooper": 90,
     "Commander": 30,
     "Guardian": 30,
     "Villager": 105,
@@ -696,7 +696,7 @@ const warshipMatrix = {
     "Stronghold": 27,
     "Ballon": null,
     "Aeronaut": null,
-    "Sky Rider": null,
+    "Sky_rider": null,
     "Dragon": null
 };
 
@@ -716,12 +716,12 @@ const guardianMatrix = {
     "Barge": 80,
     "Riverboat": 150,
     "Turtle": 85,
-    "Harpoon Ship": 95,
+    "Harpoon_ship": 95,
     "Kraken": 60,
     "Warship": 95,
     "Amphibian": 140,
     "Frog": 115,
-    "Air Trooper": 165,
+    "Air_trooper": 165,
     "Commander": 40,
     "Guardian": 45,
     "Villager": 95,
@@ -729,7 +729,7 @@ const guardianMatrix = {
     "Stronghold": 50,
     "Ballon": null,
     "Aeronaut": null,
-    "Sky Rider": null,
+    "Sky_rider": null,
     "Dragon": null
 };
 
@@ -749,12 +749,12 @@ const commanderMatrix = {
     "Barge": 75,
     "Riverboat": 95,
     "Turtle": 85,
-    "Harpoon Ship": 75,
+    "Harpoon_ship": 75,
     "Kraken": 60,
     "Warship": 60,
     "Amphibian": 95,
     "Frog": 70,
-    "Air Trooper": 110,
+    "Air_trooper": 110,
     "Commander": 25,
     "Guardian": 45,
     "Villager": 100,
@@ -762,7 +762,7 @@ const commanderMatrix = {
     "Stronghold": 40,
     "Ballon": null,
     "Aeronaut": null,
-    "Sky Rider": null,
+    "Sky_rider": null,
     "Dragon": null
 };
 
@@ -782,12 +782,12 @@ const buildingMatrix = {
     "Barge": null,
     "Riverboat": 40,
     "Turtle": null,
-    "Harpoon Ship": null,
+    "Harpoon_ship": null,
     "Kraken": 15,
     "Warship": null,
     "Amphibian": 35,
     "Frog": 30,
-    "Air Trooper": 35,
+    "Air_trooper": 35,
     "Commander": 20,
     "Guardian": 10,
     "Villager": null,
@@ -795,7 +795,7 @@ const buildingMatrix = {
     "Stronghold": null,
     "Ballon": null,
     "Aeronaut": 35,
-    "Sky Rider": null,
+    "Sky_rider": null,
     "Dragon": 10
 };
 
@@ -815,12 +815,12 @@ const skyRiderMatrix = {
     "Barge": null,
     "Riverboat": null,
     "Turtle": null,
-    "Harpoon Ship": null,
+    "Harpoon_ship": null,
     "Kraken": null,
     "Warship": null,
     "Amphibian": null,
     "Frog": null,
-    "Air Trooper": null,
+    "Air_trooper": null,
     "Commander": null,
     "Guardian": null,
     "Villager": null,
@@ -828,7 +828,7 @@ const skyRiderMatrix = {
     "Stronghold": null,
     "Ballon": 55,
     "Aeronaut": 65,
-    "Sky Rider": 40,
+    "Sky_rider": 40,
     "Dragon": 40
 };
 
