@@ -121,8 +121,8 @@ function calculateDamage(attackUnit, defenceUnit, attackTerrain, defenceTerrain)
     let defPower = defenceUnit.damageMatrix[attackUnit.name] === null ? 0 : defenceUnit.damageMatrix[attackUnit.name];
     let atkHealth = Number(document.getElementById("attacker_health").value);
     let defHealth = Number(document.getElementById("defender_health").value);
-    let atkCritical = document.getElementById(attacker_isCrit) ? attackUnit.critRate : 1;
-    let defCritical = document.getElementById(defender_isCrit) ? attackUnit.critRate : 1;
+    let atkCritical = document.getElementById("attacker_isCrit").checked ? attackUnit.critRate : 1;
+    let defCritical = document.getElementById("defender_isCrit").checked ? attackUnit.critRate : 1;
     let multiplier = 1;
     let atkDamage = null;
     let defDamage = null;
