@@ -38,10 +38,11 @@
                             <img id="attacking_env" class="" src="https://placehold.co/70x38" width="64" height="64" alt="Environment of the Attacker">
                         </div>
                         <div class="flex items-start justify-center">
-                            <label for="attacker_health" class="text-lg">Health:</label>
-                            <div class="flex">
-                                <div class="traingle-left h-6 w-6"></div>
-                                <input id="attacker_health" class="mr-4 text-center w-12 h-6" type="number" min="1" max="100" value="100" autocomplete="off">
+                            <label for="attacker_health"><img class="h-6" src="assets/GUI/heart.png"></label>
+                            <div class="flex items-center">
+                                <img id="attack_arrow_dec" class="h-4 " src="assets/GUI/health_arrow.png">
+                                <input id="attacker_health" class="mx-2 text-center w-12 h-6" type="number" min="1" max="100" value="100" autocomplete="off">
+                                <img id="attack_arrow_dec" class="h-4 scale-x-[-1]" src="assets/GUI/health_arrow.png">
                             </div>
                             <label for="attacker_isCrit" class="text-lg">Is Critical</label>
                             <input type="checkbox" id="attacker_isCrit">
