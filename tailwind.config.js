@@ -9,6 +9,7 @@ module.exports = {
         "wargroove-black": "#3d4265",
         "wargroove-red": "#aa003f",
         "wargroove-blue": "#335eb0",
+        "wargroove-green": "#77aa08",
       },
       translate: {
         "offscreen": "101vh",
