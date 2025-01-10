@@ -14,7 +14,7 @@
     <script type="module" src="scripts/main.js"></script>
     <title>Wargroove Damage Calculator</title>
 </head>
-<body class="flex justify-center items-center min-h-lvh relative text-wargroove-black">
+<body class="flex justify-center items-center h-svh relative text-wargroove-black">
 
     <div id="dimming_layer" class="h-[100lvh] w-full absolute bg-black opacity-0 z-10 pointer-events-none"></div>
 
@@ -27,34 +27,39 @@
     <main class="bg-wargroove-white mt-4 h-fit w-[95%] max-w-7xl p-4 rounded-lg border-4 self-start border-wargroove-brown">  
         <h1 class="font-bold text-2xl text-center">Damage Calulator</h1>
 
-        <div id="unit_options" class="flex flex-col items-center">
             <!-- ATTACKER OPTIONS -->
-            <div id="units" class="text-center text-2xl">
-                <div id="attacker" class="mb-4">
+                <div id="attacker" class="mb-4 text-center text-2xl">
                     <p class="border-b-4 mb-4 border-wargroove-brown">Attacking Unit</p>
                     <div id="unit_container" class="flex flex-col justify-center">
+                        <!-- 1st row -->
                         <div class="flex items-start justify-center mb-4">
                             <img id="attacking_unit" class="mr-4" src="https://placehold.co/64" width="64" height="64" alt="Attacking Unit">
                             <img id="attacking_env" class="" src="https://placehold.co/70x38" width="64" height="64" alt="Environment of the Attacker">
                         </div>
-                        <div class="flex items-start justify-center">
-                            <label for="attacker_health"><img class="h-6" src="assets/GUI/heart.png"></label>
-                            <div class="flex items-center">
-                                <img id="attack_arrow_dec" class="h-4 " src="assets/GUI/health_arrow.png">
-                                <input id="attacker_health" class="mx-2 text-center w-12 h-6" type="number" min="1" max="100" value="100" autocomplete="off">
-                                <img id="attack_arrow_dec" class="h-4 scale-x-[-1]" src="assets/GUI/health_arrow.png">
+                        <!-- 2nd row -->
+                        <div class="flex items-start justify-center">                        
+                            <div class="flex items-center bg-white mr-4">
+                                <button class="bg-wargroove-brown text-white w-8">-</button>
+                                <input id="attacker_health" class="text-right w-10 ml-1 h-full" type="number" min="1" max="100" value="100" autocomplete="off">
+                                <p class="mr-1">%</p>
+                                <button class="bg-wargroove-brown text-white w-8">+</button>
                             </div>
-                            <label for="attacker_isCrit" class="text-lg">Is Critical</label>
-                            <input type="checkbox" id="attacker_isCrit">
+                            <div>
+                                <!-- <p>Critical Hit</p> -->
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            
         
 
             <!-- DEFENDER OPTIONS -->
-            <div id="units_d" class="text-center text-2xl">
-                <div id="defender" class="mb-4">
+
+                <div id="defender" class="mb-4 text-center text-2xl">
                     <p class="border-b-4 mb-4 border-wargroove-brown">Defending Unit</p>
                     <div id="unit_container_d" class="flex flex-col">
                         <div class="flex items-start justify-center mb-4">
