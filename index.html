@@ -28,58 +28,86 @@
         <h1 class="font-bold text-2xl text-center">Damage Calulator</h1>
 
             <!-- ATTACKER OPTIONS -->
-                <div id="attacker" class="mb-4 text-center text-2xl">
-                    <p class="border-b-4 mb-4 border-wargroove-brown">Attacking Unit</p>
-                    <div id="unit_container" class="flex flex-col justify-center">
-                        <!-- 1st row -->
-                        <div class="flex items-start justify-center mb-4">
-                            <img id="attacking_unit" class="mr-4" src="https://placehold.co/64" width="64" height="64" alt="Attacking Unit">
+            <div id="attacker" class="mb-4 text-center">
+                <p class="border-b-4 mb-2 border-wargroove-brown text-2xl">Attacking Unit</p>
+                <div id="unit_container" class="flex flex-col justify-center">
+                    <!-- 1st row -->
+                    <div class="flex items-start justify-center mb-2">
+                        <div class="text-center mr-4">
+                            <p>Unit</p>
+                            <img id="attacking_unit" src="https://placehold.co/64" width="64" height="64" alt="Attacking Unit">
+                        </div>
+                        <div class="text-center">
+                            <p>Terrain</p>
                             <img id="attacking_env" class="" src="https://placehold.co/70x38" width="64" height="64" alt="Environment of the Attacker">
                         </div>
-                        <!-- 2nd row -->
-                        <div class="flex items-start justify-center">                        
-                            <div class="flex items-center bg-white mr-4">
-                                <button class="bg-wargroove-brown text-white w-8">-</button>
-                                <input id="attacker_health" class="text-right w-10 ml-1 h-full" type="number" min="1" max="100" value="100" autocomplete="off">
+                    </div>
+                    <!-- 2nd row -->
+                    <div class="flex items-start justify-center">
+                        <div class="text-center mr-4">
+                            <p>Health</p>                     
+                            <div class="flex items-center bg-white h-12 border-2 border-wargroove-brown">
+                                <button class="bg-wargroove-brown text-white w-8 h-full">-</button>
+                                <input id="attacker_health" class="text-right w-8 ml-1 h-full" type="number" min="1" max="100" value="100" autocomplete="off">
                                 <p class="mr-1">%</p>
-                                <button class="bg-wargroove-brown text-white w-8">+</button>
+                                <button class="bg-wargroove-brown text-white w-8 h-full">+</button>
                             </div>
+                        </div>
+                        <div class="text-center">
+                            <p>Critical Hit</p>
                             <div>
-                                <!-- <p>Critical Hit</p> -->
                                 <label class="switch">
-                                    <input type="checkbox">
+                                    <input id="attacker_is_crit" type="checkbox">
                                     <span class="slider"></span>
                                 </label>
                             </div>
                         </div>
                     </div>
                 </div>
-            
-        
+            </div>        
 
             <!-- DEFENDER OPTIONS -->
-
-                <div id="defender" class="mb-4 text-center text-2xl">
-                    <p class="border-b-4 mb-4 border-wargroove-brown">Defending Unit</p>
-                    <div id="unit_container_d" class="flex flex-col">
-                        <div class="flex items-start justify-center mb-4">
-                            <img id="defending_unit" class="mr-4" src="https://placehold.co/64" width="64" height="64" alt="defending Unit">
-                            <img id="defending_env" class="" src="https://placehold.co/70x38" width="64" height="64" alt="Defenders Environment">
+            <div id="defender" class="mb-4 text-center">
+                <p class="border-b-4 mb-2 border-wargroove-brown text-2xl">Defending Unit</p>
+                <div id="unit_container" class="flex flex-col justify-center">
+                    <!-- 1st row -->
+                    <div class="flex items-start justify-center mb-2">
+                        <div class="text-center mr-4">
+                            <p>Unit</p>
+                            <img id="defending_unit" src="https://placehold.co/64" width="64" height="64" alt="defending Unit">
                         </div>
-                        <div class="flex items-start justify-center">
-                            <label for="defender_health" class="text-lg">Health:</label>
-                            <input id="defender_health" class="mr-4 text-center w-12" type="number" min="1" max="100" value="100" autocomplete="off">
-                            <label for="defender_isCrit" class="text-lg">Is Critical</label>
-                            <input type="checkbox" id="defender_isCrit">
+                        <div class="text-center">
+                            <p>Terrain</p>
+                            <img id="defending_env" class="" src="https://placehold.co/70x38" width="64" height="64" alt="Environment of the defender">
+                        </div>
+                    </div>
+                    <!-- 2nd row -->
+                    <div class="flex items-start justify-center">
+                        <div class="text-center mr-4">
+                            <p>Health</p>                     
+                            <div class="flex items-center bg-white h-12">
+                                <button class="bg-wargroove-brown text-white w-8">-</button>
+                                <input id="defender_health" class="text-right w-8 ml-1 h-full" type="number" min="1" max="100" value="100" autocomplete="off">
+                                <p class="mr-1">%</p>
+                                <button class="bg-wargroove-brown text-white w-8">+</button>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <p>Critical Hit</p>
+                            <div>
+                                <label class="switch">
+                                    <input id="defender_is_crit" type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div> 
 
         <!-- RESULTS -->
         <div id="results" class="flex max-w-72">
-            <img id="atk_result_img" class="mr-1" src="assets/images/sprites/Cherrystone/aeronaut.png">
+            <img id="atk_result_img" class="mr-1" src="assets/images/sprites/Cherrystone/Aeronaut.png">
             <div class="w-full">
                 <div id="attack_results" class="flex justify-between items-center mx-auto">
                     <img width="9" height="7" class="h-4 w-auto" src="assets/GUI/attack_arrow_tail.png">
@@ -96,7 +124,7 @@
                     <img width="9" height="7" class="h-4 w-auto" src="assets/GUI/defend_arrow_tail.png">
                 </div>
             </div>
-            <img id="def_result_img" class="ml-1 scale-x-[-1]" src="assets/images/sprites/Felheim/aeronaut.png">
+            <img id="def_result_img" class="ml-1 scale-x-[-1]" src="assets/images/sprites/Felheim/Aeronaut.png">
         </div>
     </main>
         
@@ -111,102 +139,102 @@
         <form id="attack_menu_form" class="flex flex-wrap justify-center w-full gap-4" autocomplete="off">
             <input type="radio" name="attacker" id="Soldier" checked>
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Soldier">        
-                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/soldier.png" alt="Attacking units">
+                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/Soldier.png" alt="Attacking units">
                 <span class="font-bold">Soldier</span>
             </label>
             <input type="radio" name="attacker" id="Dog">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Dog">        
-                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/dog.png" alt="Attacking units">
+                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/Dog.png" alt="Attacking units">
                 <span class="font-bold">Dog</span>
             </label>
             <input type="radio" name="attacker" id="Spearman">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Spearman">        
-                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/spearman.png" alt="Attacking units">
+                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/Spearman.png" alt="Attacking units">
                 <span class="font-bold">Spearman</span>
             </label>
             <input type="radio" name="attacker" id="Archer">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Archer">        
-                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/archer.png" alt="Attacking units">
+                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/Archer.png" alt="Attacking units">
                 <span class="font-bold">Archer</span>
             </label>
             <input type="radio" name="attacker" id="Mage">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Mage">        
-                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/mage.png" alt="Attacking units">
+                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/Mage.png" alt="Attacking units">
                 <span class="font-bold">Mage</span>
             </label>
             <input type="radio" name="attacker" id="Cavalry">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Cavalry">        
-                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/cavalry.png" alt="Attacking units">
+                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/Cavalry.png" alt="Attacking units">
                 <span class="font-bold">Cavalry</span>
             </label>
             <input type="radio" name="attacker" id="Ballista">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Ballista">        
-                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/ballista.png" alt="Attacking units">
+                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/Ballista.png" alt="Attacking units">
                 <span class="font-bold">Ballista</span>
             </label>
             <input type="radio" name="attacker" id="Trebuchet">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Trebuchet">        
-                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/trebuchet.png" alt="Attacking units">
+                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/Trebuchet.png" alt="Attacking units">
                 <span class="font-bold">Trebuchet</span>
             </label>
             <input type="radio" name="attacker" id="Giant">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Giant">        
-                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/giant.png" alt="Attacking units">
+                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/Giant.png" alt="Attacking units">
                 <span class="font-bold">Giant</span>
             </label>
             <input type="radio" name="attacker" id="Rifleman">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Rifleman">        
-                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/rifleman.png" alt="Attacking units">
+                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/Rifleman.png" alt="Attacking units">
                 <span class="font-bold">Rifleman</span>
             </label>
             <input type="radio" name="attacker" id="Air_trooper">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Air_trooper">        
-                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/air_trooper.png" alt="Attacking units">
+                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/Air_trooper.png" alt="Attacking units">
                 <span class="font-bold">Air Trooper</span>
             </label>
             <input type="radio" name="attacker" id="Aeronaut">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Aeronaut">        
-                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/aeronaut.png" alt="Attacking units">
+                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/Aeronaut.png" alt="Attacking units">
                 <span class="font-bold">Aeronaut</span>
             </label>
             <input type="radio" name="attacker" id="Dragon">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Dragon">        
-                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/dragon.png" alt="Attacking units">
+                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/Dragon.png" alt="Attacking units">
                 <span class="font-bold">Dragon</span>
             </label>
             <input type="radio" name="attacker" id="Amphibian">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Amphibian">        
-                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/amphibian.png" alt="Attacking units">
+                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/Amphibian.png" alt="Attacking units">
                 <span class="font-bold">Amphibian</span>
             </label>
             <input type="radio" name="attacker" id="Riverboat">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Riverboat">        
-                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/riverboat.png" alt="Attacking units">
+                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/Riverboat.png" alt="Attacking units">
                 <span class="font-bold">Riverboat</span>
             </label>
             <input type="radio" name="attacker" id="Turtle">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Turtle">        
-                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/turtle.png" alt="Attacking units">
+                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/Turtle.png" alt="Attacking units">
                 <span class="font-bold">Turtle</span>
             </label>
             <input type="radio" name="attacker" id="Harpoon_ship">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Harpoon_ship">        
-                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/harpoon_ship.png" alt="Attacking units">
+                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/Harpoon_ship.png" alt="Attacking units">
                 <span class="font-bold">Harpoon Ship</span>
             </label>
             <input type="radio" name="attacker" id="Frog">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Frog">        
-                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/frog.png" alt="Attacking units">
+                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/Frog.png" alt="Attacking units">
                 <span class="font-bold">Frog</span>
             </label>
             <input type="radio" name="attacker" id="Kraken">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Kraken">        
-                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/kraken.png" alt="Attacking units">
+                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/Kraken.png" alt="Attacking units">
                 <span class="font-bold">Kraken</span>
             </label>
             <input type="radio" name="attacker" id="Warship">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Warship">        
-                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/warship.png" alt="Attacking units">
+                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/Warship.png" alt="Attacking units">
                 <span class="font-bold">Warship</span>
             </label>
             <input type="radio" name="attacker" id="Guardian">
@@ -216,7 +244,7 @@
             </label>
             <input type="radio" name="attacker" id="Commander">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Commander">        
-                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/commander.png" alt="Attacking units">
+                <img class="w-3/4" height="64" width="64" src="assets/images/sprites/Cherrystone/Commander.png" alt="Attacking units">
                 <span class="font-bold">Commander</span>
             </label>
         </form>
@@ -275,102 +303,102 @@
         <form id="defend_menu_form" class="flex flex-wrap justify-center w-full gap-4" autocomplete="off">
             <input type="radio" name="defender" id="Soldier_d" checked>
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Soldier_d">        
-                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/soldier.png" alt="Defending Unit">
+                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/Soldier.png" alt="Defending Unit">
                 <span class="font-bold">Soldier</span>
             </label>                    
             <input type="radio" name="defender" id="Dog_d">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Dog_d">        
-                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/dog.png" alt="Defending Unit">
+                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/Dog.png" alt="Defending Unit">
                 <span class="font-bold">Dog</span>
             </label>                    
             <input type="radio" name="defender" id="Spearman_d">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Spearman_d">        
-                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/spearman.png" alt="Defending Unit">
+                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/Spearman.png" alt="Defending Unit">
                 <span class="font-bold">Spearman</span>
             </label>                    
             <input type="radio" name="defender" id="Archer_d">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Archer_d">        
-                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/archer.png" alt="Defending Unit">
+                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/Archer.png" alt="Defending Unit">
                 <span class="font-bold">Archer</span>
             </label>                    
             <input type="radio" name="defender" id="Mage_d">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Mage_d">        
-                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/mage.png" alt="Defending Unit">
+                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/Mage.png" alt="Defending Unit">
                 <span class="font-bold">Mage</span>
             </label>                    
             <input type="radio" name="defender" id="Cavalry_d">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Cavalry_d">        
-                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/cavalry.png" alt="Defending Unit">
+                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/Cavalry.png" alt="Defending Unit">
                 <span class="font-bold">Cavalry</span>
             </label>                    
             <input type="radio" name="defender" id="Ballista_d">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Ballista_d">        
-                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/ballista.png" alt="Defending Unit">
+                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/Ballista.png" alt="Defending Unit">
                 <span class="font-bold">Ballista</span>
             </label>                    
             <input type="radio" name="defender" id="Trebuchet_d">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Trebuchet_d">        
-                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/trebuchet.png" alt="Defending Unit">
+                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/Trebuchet.png" alt="Defending Unit">
                 <span class="font-bold">Trebuchet</span>
             </label>                    
             <input type="radio" name="defender" id="Giant_d">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Giant_d">        
-                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/giant.png" alt="Defending Unit">
+                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/Giant.png" alt="Defending Unit">
                 <span class="font-bold">Giant</span>
             </label>                    
             <input type="radio" name="defender" id="Rifleman_d">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Rifleman_d">        
-                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/rifleman.png" alt="Defending Unit">
+                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/Rifleman.png" alt="Defending Unit">
                 <span class="font-bold">Rifleman</span>
             </label>                    
             <input type="radio" name="defender" id="Air_trooper_d">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Air_trooper_d">        
-                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/air_trooper.png" alt="Defending Unit">
+                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/Air_trooper.png" alt="Defending Unit">
                 <span class="font-bold">Air Trooper</span>
             </label>                    
             <input type="radio" name="defender" id="Aeronaut_d">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Aeronaut_d">        
-                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/aeronaut.png" alt="Defending Unit">
+                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/Aeronaut.png" alt="Defending Unit">
                 <span class="font-bold">Aeronaut</span>
             </label>                    
             <input type="radio" name="defender" id="Dragon_d">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Dragon_d">        
-                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/dragon.png" alt="Defending Unit">
+                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/Dragon.png" alt="Defending Unit">
                 <span class="font-bold">Dragon</span>
             </label>                    
             <input type="radio" name="defender" id="Amphibian_d">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Amphibian_d">        
-                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/amphibian.png" alt="Defending Unit">
+                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/Amphibian.png" alt="Defending Unit">
                 <span class="font-bold">Amphibian</span>
             </label>                    
             <input type="radio" name="defender" id="Riverboat_d">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Riverboat_d">        
-                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/riverboat.png" alt="Defending Unit">
+                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/Riverboat.png" alt="Defending Unit">
                 <span class="font-bold">Riverboat</span>
             </label>                    
             <input type="radio" name="defender" id="Turtle_d">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Turtle_d">        
-                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/turtle.png" alt="Defending Unit">
+                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/Turtle.png" alt="Defending Unit">
                 <span class="font-bold">Turtle</span>
             </label>                    
             <input type="radio" name="defender" id="Harpoon_ship_d">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Harpoon_ship_d">        
-                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/harpoon_ship.png" alt="Defending Unit">
+                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/Harpoon_ship.png" alt="Defending Unit">
                 <span class="font-bold">Harpoon Ship</span>
             </label>                    
             <input type="radio" name="defender" id="Frog_d">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Frog_d">        
-                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/frog.png" alt="Defending Unit">
+                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/Frog.png" alt="Defending Unit">
                 <span class="font-bold">Frog</span>
             </label>                    
             <input type="radio" name="defender" id="Kraken_d">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Kraken_d">        
-                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/kraken.png" alt="Defending Unit">
+                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/Kraken.png" alt="Defending Unit">
                 <span class="font-bold">Kraken</span>
             </label>                    
             <input type="radio" name="defender" id="Warship_d">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Warship_d">        
-                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/warship.png" alt="Defending Unit">
+                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/Warship.png" alt="Defending Unit">
                 <span class="font-bold">Warship</span>
             </label>                    
             <input type="radio" name="defender" id="Guardian_d">
@@ -380,7 +408,7 @@
             </label>                    
             <input type="radio" name="defender" id="Commander_d">
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Commander_d">        
-                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/commander.png" alt="Defending Unit">
+                <img class="w-16 h-16" height="64" width="64" src="assets/images/sprites/Felheim/Commander.png" alt="Defending Unit">
                 <span class="font-bold">Commander</span>
             </label>                
         </form>
