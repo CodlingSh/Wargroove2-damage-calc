@@ -82,33 +82,32 @@ input[type=checkbox]:checked + label {
     background-color: #ccc;
     -webkit-transition: 400ms;
     transition: 400ms;
-    border-radius: 2.125rem;
 }
 .slider:before {
     position: absolute;
-    content: "";
-    height: 1.625rem;
-    width: 1.625rem;
+    content: "✖";
+    height: 1.5rem;
+    width: 1.5rem;
     left: 0.25rem;
     bottom: 0.25rem;
     background-color: white;
     -webkit-transition: 400ms;
     transition: 400ms;
-    border-radius: 50%;
 }
 
 input:checked + .slider {
-    background-color: #2196F3;
+    background-color: #77aa08;
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 0.0625rem #2196F3;
+    box-shadow: 0 0 0.0625rem #77aa08;
 }
 
 input:checked + .slider:before {
-    -webkit-transform: translateX(1.625rem);
-    -ms-transform: translateX(1.625rem);
-    transform: translateX(1.625rem);
+    -webkit-transform: translateX(1.75rem);
+    -ms-transform: translateX(1.75rem);
+    transform: translateX(1.75rem);
+    content: "✔";
 }
 
 /*
