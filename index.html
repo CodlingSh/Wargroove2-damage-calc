@@ -16,7 +16,7 @@
 </head>
 <body class="flex justify-center items-center h-svh relative text-wargroove-black">
 
-    <div id="dimming_layer" class="h-[100lvh] w-full absolute bg-black opacity-0 z-10 pointer-events-none"></div>
+    <div id="dimming_layer" class="h-vh w-full absolute bg-black opacity-0 z-10 pointer-events-none"></div>
 
     <!-- ███    ███ ███████ ███    ██ ██    ██ 
          ████  ████ ██      ████   ██ ██    ██ 
@@ -46,11 +46,11 @@
                     <div class="flex items-start justify-center">
                         <div class="text-center mr-4">
                             <p>Health</p>                     
-                            <div class="flex items-center bg-white h-12 border-2 border-wargroove-brown">
-                                <button class="bg-wargroove-brown text-white w-8 h-full">-</button>
-                                <input id="attacker_health" class="text-right w-8 ml-1 h-full" type="number" min="1" max="100" value="100" autocomplete="off">
+                            <div class="flex items-center bg-white h-12 border-2 border-wargroove-brown text-2xl w-min">
+                                <button class="bg-wargroove-brown text-white w-8 h-full hidden">-</button>
+                                <input id="attacker_health" class="text-right ml-1 h-full min-w-0 w-min" type="number" min="1" max="100" value="100" autocomplete="off">
                                 <p class="mr-1">%</p>
-                                <button class="bg-wargroove-brown text-white w-8 h-full">+</button>
+                                <button class="bg-wargroove-brown text-white w-8 h-full hidden">+</button>
                             </div>
                         </div>
                         <div class="text-center">
