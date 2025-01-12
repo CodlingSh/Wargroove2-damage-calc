@@ -32,29 +32,29 @@
                 <p class="border-b-4 mb-2 border-wargroove-brown text-2xl">Attacking Unit</p>
                 <div id="unit_container" class="flex flex-col justify-center">
                     <!-- 1st row -->
-                    <div class="flex items-start justify-center mb-2">
-                        <div class="text-center mr-4">
+                    <div class="flex items-start justify-center">
+                        <div id="attacking_unit" class="text-center px-4 pb-3">
                             <p>Unit</p>
-                            <img id="attacking_unit" src="https://placehold.co/64" width="64" height="64" alt="Attacking Unit">
+                            <img src="https://placehold.co/64" width="64" height="64" alt="Attacking Unit">
                         </div>
-                        <div class="text-center">
+                        <div id="attacking_env" class="text-center px-4">
                             <p>Terrain</p>
-                            <img id="attacking_env" class="" src="https://placehold.co/70x38" width="64" height="64" alt="Environment of the Attacker">
+                            <img class="" src="https://placehold.co/70x38" width="64" height="64" alt="Environment of the Attacker">
                         </div>
                     </div>
                     <!-- 2nd row -->
                     <div class="flex items-start justify-center">
                         <div class="text-center mr-4">
-                            <p>Health</p>                     
-                            <div class="flex items-center bg-white h-12 border-2 border-wargroove-brown text-2xl w-min">
+                            <label for="attacker_health">Health</label>                     
+                            <div class="flex items-center bg-white h-12  text-2xl w-min">
                                 <button class="bg-wargroove-brown text-white w-8 h-full hidden">-</button>
-                                <input id="attacker_health" class="text-right ml-1 h-full min-w-0 w-min" type="number" min="1" max="100" value="100" autocomplete="off">
-                                <p class="mr-1">%</p>
+                                <input id="attacker_health" class="text-right h-full border-l-2 border-t-2 border-b-2 border-wargroove-brown pl-2 w-[3rem]" type="number" min="1" max="100" value="100" autocomplete="off">
+                                <label for="attacker_health" class="flex items-center h-full text-center border-r-2 border-t-2 border-b-2 border-wargroove-brown pr-2">%</label>
                                 <button class="bg-wargroove-brown text-white w-8 h-full hidden">+</button>
                             </div>
                         </div>
                         <div class="text-center">
-                            <p>Critical Hit</p>
+                            <label for="attacker_is_crit">Critical Hit</label>
                             <div>
                                 <label class="switch">
                                     <input id="attacker_is_crit" type="checkbox">
@@ -68,32 +68,32 @@
 
             <!-- DEFENDER OPTIONS -->
             <div id="defender" class="mb-4 text-center">
-                <p class="border-b-4 mb-2 border-wargroove-brown text-2xl">Defending Unit</p>
+                <p class="border-b-4 mb-2 border-wargroove-brown text-2xl">defending Unit</p>
                 <div id="unit_container" class="flex flex-col justify-center">
                     <!-- 1st row -->
-                    <div class="flex items-start justify-center mb-2">
-                        <div class="text-center mr-4">
+                    <div class="flex items-start justify-center">
+                        <div id="defending_unit" class="text-center px-4 pb-3">
                             <p>Unit</p>
-                            <img id="defending_unit" src="https://placehold.co/64" width="64" height="64" alt="defending Unit">
+                            <img src="https://placehold.co/64" width="64" height="64" alt="defending Unit">
                         </div>
-                        <div class="text-center">
+                        <div id="defending_env" class="text-center px-4">
                             <p>Terrain</p>
-                            <img id="defending_env" class="" src="https://placehold.co/70x38" width="64" height="64" alt="Environment of the defender">
+                            <img class="" src="https://placehold.co/70x38" width="64" height="64" alt="Environment of the defender">
                         </div>
                     </div>
                     <!-- 2nd row -->
                     <div class="flex items-start justify-center">
                         <div class="text-center mr-4">
-                            <p>Health</p>                     
-                            <div class="flex items-center bg-white h-12">
-                                <button class="bg-wargroove-brown text-white w-8">-</button>
-                                <input id="defender_health" class="text-right w-8 ml-1 h-full" type="number" min="1" max="100" value="100" autocomplete="off">
-                                <p class="mr-1">%</p>
-                                <button class="bg-wargroove-brown text-white w-8">+</button>
+                            <label for="defender_health">Health</label>                     
+                            <div class="flex items-center bg-white h-12  text-2xl w-min">
+                                <button class="bg-wargroove-brown text-white w-8 h-full hidden">-</button>
+                                <input id="defender_health" class="text-right h-full border-l-2 border-t-2 border-b-2 border-wargroove-brown pl-2 w-[3rem]" type="number" min="1" max="100" value="100" autocomplete="off">
+                                <label for="defender_health" class="flex items-center h-full text-center border-r-2 border-t-2 border-b-2 border-wargroove-brown pr-2">%</label>
+                                <button class="bg-wargroove-brown text-white w-8 h-full hidden">+</button>
                             </div>
                         </div>
                         <div class="text-center">
-                            <p>Critical Hit</p>
+                            <label for="defender_is_crit">Critical Hit</label>
                             <div>
                                 <label class="switch">
                                     <input id="defender_is_crit" type="checkbox">
