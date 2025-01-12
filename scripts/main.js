@@ -60,7 +60,7 @@ function updateForm(isUnit, isAttacking) {
     if (isUnit) {
         let finalUnit = null;
 
-        currSelectionImg.src = isAttacking ? "/assets/images/sprites/Cherrystone/" + selection + ".png" :  "/assets/images/sprites/Felheim/" + selection + ".png";
+        currSelectionImg.querySelector("img").src = isAttacking ? "/assets/images/sprites/Cherrystone/" + selection + ".png" :  "/assets/images/sprites/Felheim/" + selection + ".png";
         // find Unit object for selection
         for (const [key] of Object.entries(units)) {
             if (units[key].name === selection) {
@@ -74,7 +74,7 @@ function updateForm(isUnit, isAttacking) {
         else formState.defendUnit = finalUnit;
     }
     else {
-        currSelectionImg.src = "/assets/images/terrain/" + selection + ".png";
+        currSelectionImg.querySelector("img").src = "/assets/images/terrain/" + selection + ".png";
         if (isAttacking) formState.attackTerrain = convertDefenceValue(selection);
         else formState.defendTerrain = convertDefenceValue(selection);
     }
