@@ -714,6 +714,14 @@ video {
   width: min-content;
 }
 
+.w-\[2\.75rem\] {
+  width: 2.75rem;
+}
+
+.w-\[3rem\] {
+  width: 3rem;
+}
+
 .min-w-0 {
   min-width: 0px;
 }
@@ -780,16 +788,28 @@ video {
   border-radius: 0.5rem;
 }
 
-.border-2 {
-  border-width: 2px;
-}
-
 .border-4 {
   border-width: 4px;
 }
 
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+
 .border-b-4 {
   border-bottom-width: 4px;
+}
+
+.border-l-2 {
+  border-left-width: 2px;
+}
+
+.border-r-2 {
+  border-right-width: 2px;
+}
+
+.border-t-2 {
+  border-top-width: 2px;
 }
 
 .border-wargroove-brown {
@@ -845,8 +865,21 @@ video {
   padding: 1rem;
 }
 
-.p-8 {
-  padding: 2rem;
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
+
+.pr-2 {
+  padding-right: 0.5rem;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
 }
 
 .text-center {
@@ -964,6 +997,16 @@ input[type=checkbox] + label {
 
 input[type=checkbox]:checked + label {
   background-color: #77aa08;
+}
+
+input[type=number]:focus {
+  outline: none;
+  border-color: green
+}
+
+input[type=number]:focus + label {
+  outline: none;
+  border-color: green
 }
 
 /*
