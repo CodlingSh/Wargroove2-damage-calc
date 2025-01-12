@@ -693,6 +693,10 @@ video {
   width: 2rem;
 }
 
+.w-\[3rem\] {
+  width: 3rem;
+}
+
 .w-\[90\%\] {
   width: 90%;
 }
@@ -712,18 +716,6 @@ video {
 .w-min {
   width: -moz-min-content;
   width: min-content;
-}
-
-.w-\[2\.75rem\] {
-  width: 2.75rem;
-}
-
-.w-\[3rem\] {
-  width: 3rem;
-}
-
-.min-w-0 {
-  min-width: 0px;
 }
 
 .max-w-72 {
@@ -874,12 +866,12 @@ video {
   padding-bottom: 0.75rem;
 }
 
-.pr-2 {
-  padding-right: 0.5rem;
-}
-
 .pl-2 {
   padding-left: 0.5rem;
+}
+
+.pr-2 {
+  padding-right: 0.5rem;
 }
 
 .text-center {
@@ -983,7 +975,7 @@ input[type="radio"]:checked + label {
   /* Your selected color */
   color: white;
   /* Optional: change text color */
-  border-color: #007a5e;
+  border-color: #77aa08;
   /* Optional: change border color */
 }
 
@@ -1001,12 +993,12 @@ input[type=checkbox]:checked + label {
 
 input[type=number]:focus {
   outline: none;
-  border-color: green
+  border-color: #77aa08;
 }
 
 input[type=number]:focus + label {
   outline: none;
-  border-color: green
+  border-color: #77aa08;
 }
 
 /*
