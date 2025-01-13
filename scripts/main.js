@@ -1,7 +1,7 @@
 import Unit, { units } from "./unit.js"
 "use strict";
 
-let formState = {attackUnit: units.Soldier, defendUnit: units.Soldier, attackTerrain: 0, defendTerrain: 0} // Global object to keep track of the state of the form
+let formState = {attackUnit: units.Soldier, defendUnit: units.Soldier, attackCrit: false, defendCrit: false, attackHealth: 100, defendHealth: 100, attackTerrain: 0, defendTerrain: 0} // Global object to keep track of the state of the form
 
 /**
  * Function to show the menus. Basically just removes a tailwind class
@@ -25,73 +25,70 @@ function showMenu(isUnit, isAttacking) {
     menu.classList.remove("translate-y-offscreen");
 }
 
-function updateForm(isUnit, isAttacking) {
-    let menu = null;
-    let currSelections = null;
-    let currSelectionImg = null;
-    let selection = null;
-    let damageValues = null;
-    
-    if (isUnit) {
-        menu = isAttacking ? document.getElementById("attack_menu") : document.getElementById("defend_menu");
-        currSelections = isAttacking ? document.getElementsByName("attacker") : document.getElementsByName("defender");
-        currSelectionImg = isAttacking ? document.getElementById("attacking_unit") : document.getElementById("defending_unit");
-    } 
-    else {
-        menu = isAttacking ? document.getElementById("attack_terrain_menu") : document.getElementById("defend_terrain_menu");
-        currSelections = isAttacking ? document.getElementsByName("attack_terrain") : document.getElementsByName("defend_terrain")
-        currSelectionImg = isAttacking ? document.getElementById("attacking_env") : document.getElementById("defending_env");
+function updateUnit(isAttacking, unitId) {
+    let imgElement = isAttacking ? document.getElementById("attacking_unit").querySelector("img") : document.getElementById("defending_unit").querySelector("img");
+    let unitObject = null;
+
+    // Strip the "_d" from the end of defensive units
+    if (!isAttacking) {
+        unitId = unitId.replace("_d", "");
     }
 
-    // Check to see what unit is selected
-    for (const currSelect of currSelections) {
-        if (currSelect.checked) {
-            selection = currSelect.id;
+    // Select the proper unit object
+    for (const [key] of Object.entries(units)) {
+        if (units[key].name === unitId) {
+            console.log("UNIT ASSIGNED");
+            unitObject = units[key];
+            console.log("UNIT SELECTED: " + unitObject.name);
             break;
         }
     }
-
-    // if defending, remove the "_d" at the end of ID
-    if (isAttacking === false) {
-        selection = selection.replace("_d", "");
-    }
-
-    // Update the GUI and update state
-    if (isUnit) {
-        let finalUnit = null;
-
-        currSelectionImg.querySelector("img").src = isAttacking ? "/assets/images/sprites/Cherrystone/" + selection + ".png" :  "/assets/images/sprites/Felheim/" + selection + ".png";
-        // find Unit object for selection
-        for (const [key] of Object.entries(units)) {
-            if (units[key].name === selection) {
-                console.log("UNIT ASSIGNED");
-                finalUnit = units[key];
-                break;
-            } 
-        }
-        // assign to form state
-        if (isAttacking) formState.attackUnit = finalUnit;
-        else formState.defendUnit = finalUnit;
-    }
-    else {
-        currSelectionImg.querySelector("img").src = "/assets/images/terrain/" + selection + ".png";
-        if (isAttacking) formState.attackTerrain = convertDefenceValue(selection);
-        else formState.defendTerrain = convertDefenceValue(selection);
-    }
-
-    // console.log(formState);
-    //console.log("formstate attacking unit: " + formState[attackUnit]);
-    damageValues = calculateDamage(formState.attackUnit, formState.defendUnit, formState.attackTerrain, formState.defendTerrain);
     
-    // Add Damage to form
-    document.getElementById("attack_damage").innerHTML = damageValues[0] + "%";
-    document.getElementById("defend_damage").innerHTML = damageValues[1] + "%";
+    // Assign unit to form
+    isAttacking ? formState.attackUnit = unitObject : formState.defendUnit = unitObject;
 
-    // Update results images
-    document.getElementById("atk_result_img").src = "/assets/images/sprites/Cherrystone/" + formState.attackUnit.name + ".png";
-    document.getElementById("def_result_img").src = "/assets/images/sprites/Felheim/" + formState.defendUnit.name + ".png";
+    console.log(formState.attackUnit);
+    // Set the image on the form
+    imgElement.src = isAttacking ? "assets/images/sprites/Cherrystone/" + formState.attackUnit.name + ".png" : "assets/images/sprites/Felheim/" + formState.defendUnit.name + ".png";
+}
 
+function updateTerrain(isAttacking, terrainId) {
+    let imgElement = isAttacking ? document.getElementById("attacking_env").querySelector("img") : document.getElementById("defending_env").querySelector("img")
+    let finalValue = null;
+
+    // Strip the "_d" from the end of defensive terrain
+    if (!isAttacking) {
+        terrainId = terrainId.replace("_d", "");
+    }
+
+    // Get the number and convert value
+    finalValue = Number(terrainId[terrainId.length - 1]);
+    if (terrainId.startsWith("danger")) finalValue *= 1;
+
+    // Set formState
+    isAttacking ? formState.attackTerrain = finalValue : formState.defendTerrain = finalValue;
+
+    // Set image
+    imgElement.src = isAttacking ? document.getElementById("attacking_env").querySelector("img").src = "/assets/images/terrain/" + terrainId + ".png" : document.getElementById("defending_env").querySelector("img").src = "/assets/images/terrain/" + terrainId + ".png";
+}
+
+function updateHealth(isAttacking, healthElement) {
+    let value = Number(healthElement.value);
+
+    if (value > 100) {
+        value = 100;
+    }
+    if (value < 0) {
+        value = 0;
+    }
+    console.log(healthElement);
+    healthElement.value = value;
+
+    isAttacking ? formState.attackHealth = value : formState.defendHealth = value;
+
+    console.log("LIGMA");
     console.log(formState);
+    
 }
 
 function hideMenu(e) {
@@ -102,69 +99,100 @@ function hideMenu(e) {
     }, 100);
 }
 
-function test() {
-    console.log("This is firing from the function");
-}
-
-function convertDefenceValue(defenceString) {
-    let value = Number(defenceString[defenceString.length - 1]);
-
-    if (defenceString.startsWith("danger")) {
-        value *= -1;
-    }
-
-    return value;
-}
-
-function calculateDamage(attackUnit, defenceUnit, attackTerrain, defenceTerrain) {
-    let atkPower = attackUnit.damageMatrix[defenceUnit.name] === null ? 0 : attackUnit.damageMatrix[defenceUnit.name];
-    let defPower = defenceUnit.damageMatrix[attackUnit.name] === null ? 0 : defenceUnit.damageMatrix[attackUnit.name];
-    let atkHealth = Number(document.getElementById("attacker_health").value);
-    let defHealth = Number(document.getElementById("defender_health").value);
-    let atkCritical = document.getElementById("attacker_is_crit").checked ? attackUnit.critRate : 1;
-    let defCritical = document.getElementById("defender_is_crit").checked ? attackUnit.critRate : 1;
+function calculateDamage() {
+    let atkPower = formState.attackUnit.damageMatrix[formState.defendUnit.name] === null ? 0 : formState.attackUnit.damageMatrix[formState.defendUnit.name];
+    let defPower = formState.defendUnit.damageMatrix[formState.attackUnit.name] === null ? 0 : formState.defendUnit.damageMatrix[formState.attackUnit.name];
+    let atkTerrain = formState.attackTerrain;
+    let defTerrain = formState.defendTerrain;
+    let atkHealth = formState.attackHealth;
+    let defHealth = formState.defendHealth;
+    let atkCritical = formState.attackCrit ? formState.attackUnit.critRate : 1;
+    let defCritical = formState.defendCrit ? formState.defendUnit.critRate : 1;
     let multiplier = 1;
     let atkDamage = null;
     let defDamage = null;
 
-    console.log(`Attack Unit: ${attackUnit.name} \nDefence Unit: ${defenceUnit.name}`)
-
+    console.log(formState);
     console.log(`atkPower: ${atkPower} defPower: ${defPower} atkHealth: ${atkHealth} defHealth: ${defHealth} atkCritical: ${atkCritical} defCritical: ${defCritical} multiplier: ${multiplier} atkDamage: ${atkDamage} defDamage: ${defDamage}`);
     // Find the damage attacker will do to the enemy
-    defDamage = Math.round(atkPower * atkCritical * atkHealth / 100 * multiplier * (1 - (defHealth / 100 * defenceTerrain / 10)));
+    defDamage = Math.round(atkPower * atkCritical * atkHealth / 100 * multiplier * (1 - (defHealth / 100 * defTerrain / 10)));
     defHealth -= defDamage
     if (defHealth <= 0) {
         atkDamage = 0;
     }
     else {
-        atkDamage = Math.round(defPower * defCritical * defHealth / 100 * multiplier * (1 - (atkHealth / 100 * attackTerrain / 10))); 
+        atkDamage = Math.round(defPower * defCritical * defHealth / 100 * multiplier * (1 - (atkHealth / 100 * atkTerrain / 10))); 
     }
 
-    return [defDamage, atkDamage];
+    // Update the results
+    document.getElementById("attack_damage").innerHTML = defDamage + "%";
+    document.getElementById("defend_damage").innerHTML = atkDamage + "%";
 }
 
 // Event handlers
 // UNITS
 document.getElementById("attacking_unit").addEventListener("click", () => {showMenu(true, true)});
-document.getElementById("attack_menu_form").addEventListener("change", () => {updateForm(true, true)});
 document.getElementById("defending_unit").addEventListener("click", () => {showMenu(true, false)});
-document.getElementById("defend_menu_form").addEventListener("change", () => {updateForm(true, false)});
 // TERRAINS
 document.getElementById("attacking_env").addEventListener("click", () => {showMenu(false, true)});
-document.getElementById("attack_terrain_menu").addEventListener("change", () => {updateForm(false, true)})
 document.getElementById("defending_env").addEventListener("click", () => {showMenu(false, false)});
-document.getElementById("defend_terrain_menu").addEventListener("change", () => {updateForm(false, false)})
-// UNITS TO CLOSE
-const attackUnitBtns = document.getElementById("attack_menu_form").querySelectorAll("label");
-const defendUnitBtns = document.getElementById("defend_menu_form").querySelectorAll("label");
-const attackTerrainBtns = document.getElementById("attack_terrain_form").querySelectorAll("label");
-const defendTerrainBtns = document.getElementById("defend_terrain_form").querySelectorAll("label");
-const btnArrays = [attackUnitBtns, defendUnitBtns, attackTerrainBtns, defendTerrainBtns];
-console.log(attackUnitBtns);
-btnArrays.forEach((btnArray) => {
-    Array.from(btnArray).forEach((element) => {
-        element.addEventListener("click", () => {
-            hideMenu(element);
-        });
+// Attack unit
+const atkUnitBtns = document.getElementById("attack_menu_form").querySelectorAll("input");
+Array.from(atkUnitBtns).forEach((btn) => {
+    btn.addEventListener("click", () => {
+        updateUnit(true, btn.id);
+        calculateDamage();
+        hideMenu(btn)
     })
+})
+// Defend unit
+const defUnitBtns = document.getElementById("defend_menu_form").querySelectorAll("input");
+Array.from(defUnitBtns).forEach((btn) => {
+    btn.addEventListener("click", () => {
+        updateUnit(false, btn.id);
+        calculateDamage();
+        hideMenu(btn)
+    })
+})
+// Attack Terrain
+const atkTerrainBtns = document.getElementById("attack_terrain_form").querySelectorAll("input");
+Array.from(atkTerrainBtns).forEach((btn) => {
+    btn.addEventListener("click", () => {
+        updateTerrain(true, btn.id);
+        calculateDamage();
+        hideMenu(btn);
+    })
+})
+// Defend Terrain
+const defTerrainBtns = document.getElementById("defend_terrain_form").querySelectorAll("input");
+Array.from(defTerrainBtns).forEach((btn) => {
+    btn.addEventListener("click", () => {
+        updateTerrain(false, btn.id);
+        calculateDamage();
+        hideMenu(btn);
+    })
+})
+// Attack Health
+const atkHealthInput = document.getElementById("attacker_health");
+atkHealthInput.addEventListener("input", () => {
+    updateHealth(true, atkHealthInput);
+    calculateDamage();
+})
+// Defend Health
+const defHealthInput = document.getElementById("defender_health");
+defHealthInput.addEventListener("input", () => {
+    updateHealth(false, defHealthInput);
+    calculateDamage();
+})
+// Attack Crit
+const atkCritSwitch = document.getElementById("attacker_is_crit");
+atkCritSwitch.addEventListener("click", () => {
+    atkCritSwitch.checked ? formState.attackCrit = true : formState.attackCrit = false;
+    calculateDamage();
+})
+// Defend Crit
+const defCritSwitch = document.getElementById("defender_is_crit");
+defCritSwitch.addEventListener("click", () => {
+    defCritSwitch.checked ? formState.defendCrit = true : formState.defendCrit = false;
+    calculateDamage();
 })
