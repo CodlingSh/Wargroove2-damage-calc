@@ -928,6 +928,22 @@ video {
   font-style: normal;
 }
 
+.vt323-regular {
+  font-family: "VT323", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: pixel;
+
+  src: url(../assets/font/PixelifySans-Regular.woff2) format("woff2"),
+        url(../assets/font/PixelifySans-Regular.woff) format("woff"),
+        url(../assets/font/PixelifySans-Regular.ttf) format("truetype");
+
+  font-weight: 400;
+}
+
 /*
 * ===============
 * === UTILITY ===
@@ -1070,7 +1086,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;*/
-  font-family: "Pixelify Sans", serif;
+  font-family: "pixel", Arial, serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
