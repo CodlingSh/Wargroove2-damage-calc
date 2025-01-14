@@ -1,11 +1,20 @@
 import Unit, { units } from "./unit.js"
 "use strict";
 
-let formState = {attackUnit: units.Soldier, defendUnit: units.Soldier, attackCrit: false, defendCrit: false, attackHealth: 100, defendHealth: 100, attackTerrain: 0, defendTerrain: 0} // Global object to keep track of the state of the form
+// Global object to keep track of the state of the form
+let formState = {
+    attackUnit: units.Soldier,
+    defendUnit: units.Soldier,
+    attackCrit: false,
+    defendCrit: false,
+    attackHealth: 100,
+    defendHealth: 100,
+    attackTerrain: 0,
+    defendTerrain: 0
+}
 
 /**
  * Function to show the menus. Basically just removes a tailwind class
- *
  * @param {bool} isUnit - Bool to determin if we are selecting unit menu or terrain menu
  * @param {bool} isAttacking - Bool to determin whether to show menu for attacking or defending player
  * @returns {null} Does not return anything
@@ -13,6 +22,10 @@ let formState = {attackUnit: units.Soldier, defendUnit: units.Soldier, attackCri
  */
 function showMenu(isUnit, isAttacking) {
     let menu = null;
+    const dimLayer = document.getElementById("dimming_layer");
+
+    // Turn on dimming layer
+    dimLayer.classList.replace("opacity-0", "opacity-60");
     
     if (isUnit) {
         menu = isAttacking ? document.getElementById("attack_menu") : document.getElementById("defend_menu");
@@ -92,9 +105,12 @@ function updateHealth(isAttacking, healthElement) {
 }
 
 function hideMenu(e) {
+    const dimLayer = document.getElementById("dimming_layer");
+
     console.log(e.parentElement);
     setTimeout(() => {
         e.parentElement.parentElement.classList.add("translate-y-offscreen");
+        dimLayer.classList.replace("opacity-60", "opacity-0");
         console.log("e");
     }, 100);
 }
@@ -125,6 +141,8 @@ function calculateDamage() {
     }
 
     // Update the results
+    document.getElementById("atk_result_img").src = "/assets/images/sprites/Cherrystone/" + formState.attackUnit.name + ".png";
+    document.getElementById("def_result_img").src = "/assets/images/sprites/Felheim/" + formState.defendUnit.name + ".png";
     document.getElementById("attack_damage").innerHTML = defDamage + "%";
     document.getElementById("defend_damage").innerHTML = atkDamage + "%";
 }
