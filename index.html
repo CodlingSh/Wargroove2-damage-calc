@@ -11,9 +11,9 @@
     <script type="module" src="scripts/main.js"></script>
     <title>Wargroove 2 Damage Calculator</title>
 </head>
-<body class="flex justify-center items-center h-svh relative text-wargroove-black">
+<body class="flex justify-center items-center min-h-svh relative text-wargroove-black">
 
-    <div id="dimming_layer" class="h-vh w-full absolute bg-black opacity-0 z-10 pointer-events-none"></div>
+    <div id="dimming_layer" class="h-full w-full absolute bg-black opacity-0 z-10 pointer-events-none"></div>
 
     <!-- ███    ███ ███████ ███    ██ ██    ██ 
          ████  ████ ██      ████   ██ ██    ██ 
@@ -32,11 +32,11 @@
                     <div class="flex items-start justify-center">
                         <div id="attacking_unit" class="text-center px-4 pb-3">
                             <p>Unit</p>
-                            <img src="https://placehold.co/64" width="64" height="64" alt="Attacking Unit">
+                            <img src="assets/images/sprites/Cherrystone/soldier.png" width="64" height="64" alt="Attacking Unit">
                         </div>
                         <div id="attacking_env" class="text-center px-4">
                             <p>Terrain</p>
-                            <img class="" src="https://placehold.co/70x38" width="64" height="64" alt="Environment of the Attacker">
+                            <img class="" src="assets/images/terrain/sheild0.png" width="64" height="64" alt="Environment of the Attacker">
                         </div>
                     </div>
                     <!-- 2nd row -->
@@ -71,11 +71,11 @@
                     <div class="flex items-start justify-center">
                         <div id="defending_unit" class="text-center px-4 pb-3">
                             <p>Unit</p>
-                            <img src="https://placehold.co/64" width="64" height="64" alt="defending Unit">
+                            <img src="assets/images/sprites/Felheim/soldier.png" width="64" height="64" alt="defending Unit">
                         </div>
                         <div id="defending_env" class="text-center px-4">
                             <p>Terrain</p>
-                            <img class="" src="https://placehold.co/70x38" width="64" height="64" alt="Environment of the defender">
+                            <img class="" src="assets/images/terrain/sheild0.png" width="64" height="64" alt="Environment of the defender">
                         </div>
                     </div>
                     <!-- 2nd row -->
@@ -104,24 +104,24 @@
 
         <!-- RESULTS -->
         <div id="results" class="flex max-w-72">
-            <img id="atk_result_img" class="mr-1" src="assets/images/sprites/Cherrystone/Aeronaut.png">
+            <img id="atk_result_img" class="mr-1" src="assets/images/sprites/Cherrystone/soldier.png">
             <div class="w-full">
                 <div id="attack_results" class="flex justify-between items-center mx-auto">
                     <img width="9" height="7" class="h-4 w-auto" src="assets/GUI/attack_arrow_tail.png">
                     <div class="h-4 w-full bg-wargroove-red"></div>
-                    <p id="attack_damage" class="text-lg mx-2">00%</p>
+                    <p id="attack_damage" class="text-lg mx-2">60%</p>
                     <div class="h-4 w-full bg-wargroove-red"></div>
                     <img width="10" height="7" class="h-7 w-auto" src="assets/GUI/attack_arrow_head.png">
                 </div>
                 <div id="defend_results" class="flex justify-between items-center mx-auto">
                     <img width="10" height="7" class="h-7 w-auto" src="assets/GUI/defend_arrow_head.png">
                     <div class="h-4 w-full bg-wargroove-blue"></div>
-                    <p id="defend_damage" class="text-lg mx-2">0%</p>
+                    <p id="defend_damage" class="text-lg mx-2">24%</p>
                     <div class="h-4 w-full bg-wargroove-blue"></div>
                     <img width="9" height="7" class="h-4 w-auto" src="assets/GUI/defend_arrow_tail.png">
                 </div>
             </div>
-            <img id="def_result_img" class="ml-1 scale-x-[-1]" src="assets/images/sprites/Felheim/Aeronaut.png">
+            <img id="def_result_img" class="ml-1 scale-x-[-1]" src="assets/images/sprites/Felheim/soldier.png">
         </div>
     </main>
         
@@ -248,7 +248,7 @@
     </div>
 
     <!-- MENU FOR ATTACKER TERRAIN -->
-    <div id="attack_terrain_menu" class="fixed translate-y-offscreen p-4 right-6 max-w-md bg-rose-500 z-20 overflow-y-auto">
+    <div id="attack_terrain_menu" class="fixed translate-y-offscreen p-4 w-[90%] max-w-md mx-auto bg-rose-500 z-20 overflow-y-auto">
         <form id="attack_terrain_form" class="flex flex-wrap justify-center w-full h-fit gap-4" autocomplete="off">
             <input type="radio" name="attack_terrain" id="sheild0" checked>
             <label class="flex flex-col items-center text-base p-1 h-14 w-28" for="sheild0">        
@@ -296,7 +296,7 @@
          ██████  ███████ ██      ███████ ██   ████  ██████ ███████ -->
     
     <!-- MENU FOR SELECTING DEFENDING UNIT -->
-    <div id="defend_menu" class="fixed translate-y-offscreen p-4 left-6 top-6 bottom-6 right-6 bg-blue-500 z-20 overflow-y-auto">
+    <div id="defend_menu" class="fixed translate-y-offscreen p-4 w-[90%] h-[90vh] bg-blue-500 z-20 overflow-y-auto">
         <form id="defend_menu_form" class="flex flex-wrap justify-center w-full gap-4" autocomplete="off">
             <input type="radio" name="defender" id="Soldier_d" checked>
             <label class="flex flex-col items-center text-base p-1 h-28 w-28" for="Soldier_d">        
@@ -412,7 +412,7 @@
     </div>
 
     <!-- MENU FOR defendER TERRAIN -->
-    <div id="defend_terrain_menu" class="fixed translate-y-offscreen p-4 left-6 top-6 bottom-6 right-6 max-w-md bg-blue-500 z-20 overflow-y-auto">
+    <div id="defend_terrain_menu" class="fixed translate-y-offscreen p-4 w-[90%] max-w-md mx-auto bg-blue-500 z-20 overflow-y-auto">
         <form id="defend_terrain_form" class="flex flex-wrap justify-center w-full gap-4" autocomplete="off">
             <input type="radio" name="defend_terrain" id="sheild0_d" checked>
             <label class="flex flex-col items-center text-base p-1 h-14 w-28" for="sheild0_d">        
