@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       colors: {
         "wargroove-brown": "#ad855a",
-        "wargroove-white": "#f4f0e9",
+        "wargroove-light-brown": "#d4bb84",
+        "wargroove-white": "#f4f6e9",
         "wargroove-black": "#3d4265",
         "wargroove-red": "#aa003f",
         "wargroove-blue": "#335eb0",

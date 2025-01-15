@@ -107,7 +107,7 @@
 }
 
 /*
-! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.13 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -550,7 +550,7 @@ video {
 
 /* Make elements with the HTML hidden attribute stay hidden by default */
 
-[hidden]:where(:not([hidden="until-found"])) {
+[hidden] {
   display: none;
 }
 
@@ -633,10 +633,6 @@ video {
   height: 3.5rem;
 }
 
-.h-16 {
-  height: 4rem;
-}
-
 .h-28 {
   height: 7rem;
 }
@@ -649,8 +645,20 @@ video {
   height: 1.75rem;
 }
 
+.h-\[4\.5rem\] {
+  height: 4.5rem;
+}
+
+.h-\[6\.625rem\] {
+  height: 6.625rem;
+}
+
 .h-\[90vh\] {
   height: 90vh;
+}
+
+.h-auto {
+  height: auto;
 }
 
 .h-fit {
@@ -664,6 +672,10 @@ video {
 
 .h-svh {
   height: 100svh;
+}
+
+.h-3\/4 {
+  height: 75%;
 }
 
 .min-h-svh {
@@ -711,33 +723,28 @@ video {
   width: min-content;
 }
 
-.max-w-72 {
-  max-width: 18rem;
-}
-
-.max-w-7xl {
-  max-width: 80rem;
-}
-
-.max-w-md {
-  max-width: 28rem;
-}
-
-.max-w-48 {
-  max-width: 12rem;
+.max-w-3xl {
+  max-width: 48rem;
 }
 
 .max-w-52 {
   max-width: 13rem;
 }
 
-.translate-y-offscreen {
-  --tw-translate-y: 101vh;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+.max-w-72 {
+  max-width: 18rem;
 }
 
-.translate-y-1\/2 {
-  --tw-translate-y: 50%;
+.max-w-md {
+  max-width: 28rem;
+}
+
+.max-w-xl {
+  max-width: 36rem;
+}
+
+.translate-y-offscreen {
+  --tw-translate-y: 101vh;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -812,47 +819,52 @@ video {
 
 .border-wargroove-brown {
   --tw-border-opacity: 1;
-  border-color: rgb(173 133 90 / var(--tw-border-opacity, 1));
+  border-color: rgb(173 133 90 / var(--tw-border-opacity));
 }
 
 .bg-black {
   --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .bg-blue-500 {
   --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity, 1));
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
 .bg-rose-500 {
   --tw-bg-opacity: 1;
-  background-color: rgb(244 63 94 / var(--tw-bg-opacity, 1));
+  background-color: rgb(244 63 94 / var(--tw-bg-opacity));
 }
 
 .bg-wargroove-blue {
   --tw-bg-opacity: 1;
-  background-color: rgb(51 94 176 / var(--tw-bg-opacity, 1));
+  background-color: rgb(51 94 176 / var(--tw-bg-opacity));
 }
 
 .bg-wargroove-brown {
   --tw-bg-opacity: 1;
-  background-color: rgb(173 133 90 / var(--tw-bg-opacity, 1));
+  background-color: rgb(173 133 90 / var(--tw-bg-opacity));
+}
+
+.bg-wargroove-light-brown {
+  --tw-bg-opacity: 1;
+  background-color: rgb(212 187 132 / var(--tw-bg-opacity));
 }
 
 .bg-wargroove-red {
   --tw-bg-opacity: 1;
-  background-color: rgb(170 0 63 / var(--tw-bg-opacity, 1));
+  background-color: rgb(170 0 63 / var(--tw-bg-opacity));
 }
 
 .bg-wargroove-white {
   --tw-bg-opacity: 1;
-  background-color: rgb(244 240 233 / var(--tw-bg-opacity, 1));
+  background-color: rgb(244 246 233 / var(--tw-bg-opacity));
 }
 
 .bg-white {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .p-1 {
@@ -909,12 +921,12 @@ video {
 
 .text-wargroove-black {
   --tw-text-opacity: 1;
-  color: rgb(61 66 101 / var(--tw-text-opacity, 1));
+  color: rgb(61 66 101 / var(--tw-text-opacity));
 }
 
 .text-white {
   --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .opacity-0 {
@@ -997,12 +1009,8 @@ input[type="radio"] {
 }
 
 input[type="radio"]:checked + label {
-  background-color: #10ac84;
-  /* Your selected color */
+  background-color: #3d4265;
   color: white;
-  /* Optional: change text color */
-  border-color: #77aa08;
-  /* Optional: change border color */
 }
 
 input[type=checkbox] {
@@ -1104,14 +1112,4 @@ body {
 
 main > * {
   margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-  .md\:flex {
-    display: flex;
-  }
-
-  .md\:h-32 {
-    height: 8rem;
-  }
 }

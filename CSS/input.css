@@ -59,9 +59,8 @@ input[type="radio"] {
 }
 
 input[type="radio"]:checked + label {
-    background-color: #10ac84; /* Your selected color */
-    color: white; /* Optional: change text color */
-    border-color: #77aa08; /* Optional: change border color */
+    background-color: #3d4265;
+    color: white;
 }
 
 input[type=checkbox] {
