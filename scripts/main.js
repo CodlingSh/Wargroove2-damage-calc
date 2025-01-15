@@ -76,7 +76,7 @@ function updateTerrain(isAttacking, terrainId) {
 
     // Get the number and convert value
     finalValue = Number(terrainId[terrainId.length - 1]);
-    if (terrainId.startsWith("danger")) finalValue *= 1;
+    if (terrainId.startsWith("danger")) finalValue *= -1;
 
     // Set formState
     isAttacking ? formState.attackTerrain = finalValue : formState.defendTerrain = finalValue;
@@ -94,14 +94,9 @@ function updateHealth(isAttacking, healthElement) {
     if (value < 0) {
         value = 0;
     }
-    console.log(healthElement);
+
     healthElement.value = value;
-
     isAttacking ? formState.attackHealth = value : formState.defendHealth = value;
-
-    console.log("LIGMA");
-    console.log(formState);
-    
 }
 
 function hideMenu(e) {
