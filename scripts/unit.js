@@ -755,7 +755,7 @@ const commanderMatrix = {
     "Amphibian": 95,
     "Frog": 70,
     "Air_trooper": 110,
-    "Commander": 25,
+    "Commander": 45,
     "Guardian": 45,
     "Villager": 100,
     "Building": 75,
