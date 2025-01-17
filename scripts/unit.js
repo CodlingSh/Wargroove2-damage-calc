@@ -431,7 +431,7 @@ const aeronautMatrix = {
     "Building": 40,
     "Stronghold": 22,
     "Ballon": 60,
-    "Aeronaut": 60,
+    "Aeronaut": 55,
     "Sky_rider": 35,
     "Dragon": 40
 };

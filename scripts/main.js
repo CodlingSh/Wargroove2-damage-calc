@@ -123,24 +123,42 @@ function calculateDamage() {
     let atkDamage = null;
     let defDamage = null;
 
-    console.log(formState);
-    console.log(`atkPower: ${atkPower} defPower: ${defPower} atkHealth: ${atkHealth} defHealth: ${defHealth} atkCritical: ${atkCritical} defCritical: ${defCritical} multiplier: ${multiplier} atkDamage: ${atkDamage} defDamage: ${defDamage}`);
+    // Remove defences for air units
+    if (formState.attackUnit.unitType === "air") {
+        atkTerrain = 0;
+    }
+    if (formState.defendUnit.unitType === "air") {
+        defTerrain = 0;
+    }
+
+    // Set health to 1 when on negative terrain
+    if (atkTerrain < 0) {
+        atkHealth = 1
+    }
+    if (defTerrain < 0) {
+        defHealth = 1
+    }
+
     // Find the damage attacker will do to the enemy
-    defDamage = Math.round(atkPower * atkCritical * atkHealth / 100 * multiplier * (1 - (defHealth / 100 * defTerrain / 10)));
+    defDamage = Math.round(atkPower * atkCritical * (atkHealth / 100) * multiplier * (1 - ((defHealth / 100) * defTerrain / 10)));
     defHealth -= defDamage
     if (defHealth <= 0) {
+        console.log("Def health is less than 0")
         atkDamage = 0;
     }
     else {
-        atkDamage = Math.round(defPower * defCritical * defHealth / 100 * multiplier * (1 - (atkHealth / 100 * atkTerrain / 10))); 
+        atkDamage = Math.round(defPower * defCritical * (defHealth / 100) * multiplier * (1 - ((atkHealth / 100) * atkTerrain / 10))); 
     }
-
+    
+    console.log(`atkPower: ${atkPower} defPower: ${defPower} atkHealth: ${atkHealth} defHealth: ${defHealth} atkCritical: ${atkCritical} defCritical: ${defCritical} multiplier: ${multiplier} atkDamage: ${atkDamage} defDamage: ${defDamage}`);
+    
     // Update the results
     document.getElementById("atk_result_img").src = "/assets/images/sprites/Cherrystone/" + formState.attackUnit.name + ".png";
     document.getElementById("def_result_img").src = "/assets/images/sprites/Felheim/" + formState.defendUnit.name + ".png";
     document.getElementById("attack_damage").innerHTML = defDamage + "%";
     document.getElementById("defend_damage").innerHTML = atkDamage + "%";
 }
+
 
 // Event handlers
 // UNITS
