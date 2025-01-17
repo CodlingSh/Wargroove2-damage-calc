@@ -22,7 +22,7 @@
 
 @font-face {
     font-family: pixel;
-    src: url(../assets/font/PixelifySans-Regular.woff2) format("woff2"),
+    src: /*url(../assets/font/PixelifySans-Regular.woff2) format("woff2"),*/
         url(../assets/font/PixelifySans-Regular.woff) format("woff"),
         url(../assets/font/PixelifySans-Regular.ttf) format("truetype");
     font-weight: 400;
