@@ -9,8 +9,8 @@ let formState = {
     defendCrit: false,
     attackHealth: 100,
     defendHealth: 100,
-    attackTerrain: 0,
-    defendTerrain: 0
+    attackTerrain: 1,
+    defendTerrain: 1
 }
 
 /**
@@ -133,10 +133,10 @@ function calculateDamage() {
 
     // Set health to 1 when on negative terrain
     if (atkTerrain < 0) {
-        atkHealth = 1
+        atkHealth = 100
     }
     if (defTerrain < 0) {
-        defHealth = 1
+        defHealth = 100
     }
 
     // Find the damage attacker will do to the enemy
@@ -226,4 +226,22 @@ const defCritSwitch = document.getElementById("defender_is_crit");
 defCritSwitch.addEventListener("click", () => {
     defCritSwitch.checked ? formState.defendCrit = true : formState.defendCrit = false;
     calculateDamage();
+})
+// Reset health boxes to 0 when clicked
+document.getElementById("attacker_health").addEventListener("click", (event) => {
+    event.target.value = "";
+})
+document.getElementById("defender_health").addEventListener("click", (event) => {
+    event.target.value = "";
+})
+// If health boxes are null, go to 100
+document.getElementById("attacker_health").addEventListener("blur", (event) => {
+    if (event.target.value === "") {
+        event.target.value = 100;
+    }
+})
+document.getElementById("defender_health").addEventListener("blur", (event) => {
+    if (event.target.value === "") {
+        event.target.value = 100;
+    }
 })
