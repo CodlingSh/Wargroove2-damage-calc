@@ -37,7 +37,7 @@
                         </div>
                         <div id="attacking_env" class="text-center px-4">
                             <p>Terrain</p>
-                            <img class="" src="assets/images/terrain/sheild0.png" width="70" height="38" alt="Environment of the Attacker">
+                            <img class="" src="assets/images/terrain/sheild1.png" width="70" height="38" alt="Environment of the Attacker">
                         </div>
                     </div>
                     <!-- 2nd row -->
@@ -76,7 +76,7 @@
                         </div>
                         <div id="defending_env" class="text-center px-4">
                             <p>Terrain</p>
-                            <img class="" src="assets/images/terrain/sheild0.png" width="70" height="38" alt="Environment of the defender">
+                            <img class="" src="assets/images/terrain/sheild1.png" width="70" height="38" alt="Environment of the defender">
                         </div>
                     </div>
                     <!-- 2nd row -->
@@ -107,24 +107,24 @@
         <!-- RESULTS -->
         <p class="border-b-4 mb-2 border-wargroove-brown text-2xl max-w-72 text-center">Damage Results</p>
         <div id="results" class="flex max-w-72 h-[4.5rem]">
-            <img id="atk_result_img" class="mr-1 w-16 h-auto" alt="Attacking unit results" src="assets/images/sprites/Cherrystone/soldier.png">
+            <img id="atk_result_img" class="mr-1 w-16 h-16" height="64" width="64" alt="Attacking unit results" src="assets/images/sprites/Cherrystone/soldier.png">
             <div class="w-full">
                 <div id="attack_results" class="flex justify-between items-center mx-auto">
                     <img width="9" height="7" class="h-4 w-auto" alt="This arrow represents the damage the attacking unit does to the defending unit" src="assets/GUI/attack_arrow_tail.png">
                     <div class="h-4 w-full bg-wargroove-red"></div>
-                    <p id="attack_damage" class="text-lg mx-2">60%</p>
+                    <p id="attack_damage" class="text-lg mx-2">54%</p>
                     <div class="h-4 w-full bg-wargroove-red"></div>
                     <img width="10" height="7" class="h-7 w-auto" alt="This arrow represents the damage the attacking unit does to the defending unit" src="assets/GUI/attack_arrow_head.png">
                 </div>
                 <div id="defend_results" class="flex justify-between items-center mx-auto">
                     <img width="10" height="7" class="h-7 w-auto" alt="This arrow represents the damage the defending unit does to the attacking unit" src="assets/GUI/defend_arrow_head.png">
                     <div class="h-4 w-full bg-wargroove-blue"></div>
-                    <p id="defend_damage" class="text-lg mx-2">24%</p>
+                    <p id="defend_damage" class="text-lg mx-2">25%</p>
                     <div class="h-4 w-full bg-wargroove-blue"></div>
                     <img width="9" height="7" class="h-4 w-auto" alt="This arrow represents the damage the defending unit does to the attacking unit" src="assets/GUI/defend_arrow_tail.png">
                 </div>
             </div>
-            <img id="def_result_img" class="ml-1 scale-x-[-1] w-16 h-auto" alt="Defending unit results" src="assets/images/sprites/Felheim/soldier.png">
+            <img id="def_result_img" class="ml-1 scale-x-[-1] w-16 h-16" height="64" width="64" alt="Defending unit results" src="assets/images/sprites/Felheim/soldier.png">
         </div>
     </main>
     
@@ -256,11 +256,19 @@
     <div id="attack_terrain_menu" class="fixed translate-y-offscreen p-4 w-[90%] max-w-md mx-auto bg-wargroove-light-brown z-20 overflow-y-auto">
         <h2 class="text-center bg-wargroove-red text-wargroove-white mb-4">Attacker Terrain </h2>
         <form id="attack_terrain_form" class="flex flex-wrap justify-center w-full h-fit gap-4" autocomplete="off">
-            <input type="radio" name="attack_terrain" id="sheild0" checked>
+            <input type="radio" name="attack_terrain" id="danger2">
+            <label class="flex flex-col items-center text-base p-1 h-14 w-28" for="danger2">        
+                <img class="w-3/4" height="38" width="70" src="assets/images/terrain/danger2.png" alt="Attacking units">
+            </label>
+            <input type="radio" name="attack_terrain" id="danger1">
+            <label class="flex flex-col items-center text-base p-1 h-14 w-28" for="danger1">        
+                <img class="w-3/4" height="38" width="70" src="assets/images/terrain/danger1.png" alt="Attacking units">
+            </label>
+            <input type="radio" name="attack_terrain" id="sheild0">
             <label class="flex flex-col items-center text-base p-1 h-14 w-28" for="sheild0">        
                 <img class="w-3/4" height="38" width="70" src="assets/images/terrain/sheild0.png" alt="Attackers terrain">
             </label>
-            <input type="radio" name="attack_terrain" id="sheild1">
+            <input type="radio" name="attack_terrain" id="sheild1" checked>
             <label class="flex flex-col items-center text-base p-1 h-14 w-28" for="sheild1">        
                 <img class="w-3/4" height="38" width="70" src="assets/images/terrain/sheild1.png" alt="Attackers terrain">
             </label>
@@ -275,14 +283,6 @@
             <input type="radio" name="attack_terrain" id="sheild4">
             <label class="flex flex-col items-center text-base p-1 h-14 w-28" for="sheild4">        
                 <img class="w-3/4" height="38" width="70" src="assets/images/terrain/sheild4.png" alt="Attackers terrain">
-            </label>
-            <input type="radio" name="attack_terrain" id="danger1">
-            <label class="flex flex-col items-center text-base p-1 h-14 w-28" for="danger1">        
-                <img class="w-3/4" height="38" width="70" src="assets/images/terrain/danger1.png" alt="Attacking units">
-            </label>
-            <input type="radio" name="attack_terrain" id="danger2">
-            <label class="flex flex-col items-center text-base p-1 h-14 w-28" for="danger2">        
-                <img class="w-3/4" height="38" width="70" src="assets/images/terrain/danger2.png" alt="Attacking units">
             </label>
         </form>
     </div>
@@ -413,12 +413,20 @@
     <!-- MENU FOR DEFENDER TERRAIN -->
     <div id="defend_terrain_menu" class="fixed translate-y-offscreen p-4 w-[90%] max-w-md mx-auto bg-wargroove-light-brown z-20 overflow-y-auto">
         <h2 class="text-center bg-wargroove-blue text-wargroove-white mb-4">Defender Terrain</h2>
-        <form id="defend_terrain_form" class="flex flex-wrap justify-center w-full gap-4" autocomplete="off">
-            <input type="radio" name="defend_terrain" id="sheild0_d" checked>
+        <form id="defend_terrain_form" class="flex flex-wrap justify-center w-full gap-4" autocomplete="off">               
+            <input type="radio" name="defend_terrain" id="danger2_d">
+            <label class="flex flex-col items-center text-base p-1 h-14 w-28" for="danger2_d">        
+                <img class="w-3/4" height="38" width="70" src="assets/images/terrain/danger2.png" alt="Defending Terrain">
+            </label>
+            <input type="radio" name="defend_terrain" id="danger1_d">
+            <label class="flex flex-col items-center text-base p-1 h-14 w-28" for="danger1_d">        
+                <img class="w-3/4" height="38" width="70" src="assets/images/terrain/danger1.png" alt="Defending Terrain">
+            </label> 
+            <input type="radio" name="defend_terrain" id="sheild0_d">
             <label class="flex flex-col items-center text-base p-1 h-14 w-28" for="sheild0_d">        
                 <img class="w-3/4" height="38" width="70" src="assets/images/terrain/sheild0.png" alt="Defending terrain">
             </label>                
-            <input type="radio" name="defend_terrain" id="sheild1_d">
+            <input type="radio" name="defend_terrain" id="sheild1_d" checked>
             <label class="flex flex-col items-center text-base p-1 h-14 w-28" for="sheild1_d">        
                 <img class="w-3/4" height="38" width="70" src="assets/images/terrain/sheild1.png" alt="Defending terrain">
             </label>                
@@ -433,20 +441,12 @@
             <input type="radio" name="defend_terrain" id="sheild4_d">
             <label class="flex flex-col items-center text-base p-1 h-14 w-28" for="sheild4_d">        
                 <img class="w-3/4" height="38" width="70" src="assets/images/terrain/sheild4.png" alt="Defending terrain">
-            </label>                
-            <input type="radio" name="defend_terrain" id="danger1_d">
-            <label class="flex flex-col items-center text-base p-1 h-14 w-28" for="danger1_d">        
-                <img class="w-3/4" height="38" width="70" src="assets/images/terrain/danger1.png" alt="Defending Terrain">
-            </label>                
-            <input type="radio" name="defend_terrain" id="danger2_d">
-            <label class="flex flex-col items-center text-base p-1 h-14 w-28" for="danger2_d">        
-                <img class="w-3/4" height="38" width="70" src="assets/images/terrain/danger2.png" alt="Defending Terrain">
             </label>         
         </form>
     </div>
     </div>
 
-    <footer class="text-center bg-wargroove-black text-wargroove-white w-full mt-auto">
+    <footer class="text-center bg-wargroove-black text-wargroove-white w-full mt-auto py-4">
         <p>Game mechanics and assets © <a href="https://chucklefish.org/">Chucklefish</a>.</p>
         <p>Created by <a href="https://www.sheldonc.ca">Sheldon Codling</a></p>
     </footer>
