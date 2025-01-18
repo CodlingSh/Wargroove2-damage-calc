@@ -28,7 +28,7 @@
             <!-- ATTACKER OPTIONS -->
             <div id="attacker" class="mb-4 text-center max-w-52">
                 <p class="border-b-4 mb-2 border-wargroove-brown text-2xl">Attacking Unit</p>
-                <div id="unit_container" class="flex flex-col justify-center">
+                <div class="flex flex-col justify-center">
                     <!-- 1st row -->
                     <div class="flex items-start justify-center h-[6.625rem]">
                         <div id="attacking_unit" class="text-center px-4 pb-3">
@@ -67,7 +67,7 @@
             <!-- DEFENDER OPTIONS -->
             <div id="defender" class="mb-4 text-center max-w-52">
                 <p class="border-b-4 mb-2 border-wargroove-brown text-2xl">Defending Unit</p>
-                <div id="unit_container" class="flex flex-col justify-center">
+                <div class="flex flex-col justify-center">
                     <!-- 1st row -->
                     <div class="flex items-start justify-center">
                         <div id="defending_unit" class="text-center px-4 pb-3">
@@ -107,24 +107,24 @@
         <!-- RESULTS -->
         <p class="border-b-4 mb-2 border-wargroove-brown text-2xl max-w-72 text-center">Damage Results</p>
         <div id="results" class="flex max-w-72 h-[4.5rem]">
-            <img id="atk_result_img" class="mr-1 w-16 h-auto" src="assets/images/sprites/Cherrystone/soldier.png">
+            <img id="atk_result_img" class="mr-1 w-16 h-auto" alt="Attacking unit results" src="assets/images/sprites/Cherrystone/soldier.png">
             <div class="w-full">
                 <div id="attack_results" class="flex justify-between items-center mx-auto">
-                    <img width="9" height="7" class="h-4 w-auto" src="assets/GUI/attack_arrow_tail.png">
+                    <img width="9" height="7" class="h-4 w-auto" alt="This arrow represents the damage the attacking unit does to the defending unit" src="assets/GUI/attack_arrow_tail.png">
                     <div class="h-4 w-full bg-wargroove-red"></div>
                     <p id="attack_damage" class="text-lg mx-2">60%</p>
                     <div class="h-4 w-full bg-wargroove-red"></div>
-                    <img width="10" height="7" class="h-7 w-auto" src="assets/GUI/attack_arrow_head.png">
+                    <img width="10" height="7" class="h-7 w-auto" alt="This arrow represents the damage the attacking unit does to the defending unit" src="assets/GUI/attack_arrow_head.png">
                 </div>
                 <div id="defend_results" class="flex justify-between items-center mx-auto">
-                    <img width="10" height="7" class="h-7 w-auto" src="assets/GUI/defend_arrow_head.png">
+                    <img width="10" height="7" class="h-7 w-auto" alt="This arrow represents the damage the defending unit does to the attacking unit" src="assets/GUI/defend_arrow_head.png">
                     <div class="h-4 w-full bg-wargroove-blue"></div>
                     <p id="defend_damage" class="text-lg mx-2">24%</p>
                     <div class="h-4 w-full bg-wargroove-blue"></div>
-                    <img width="9" height="7" class="h-4 w-auto" src="assets/GUI/defend_arrow_tail.png">
+                    <img width="9" height="7" class="h-4 w-auto" alt="This arrow represents the damage the defending unit does to the attacking unit" src="assets/GUI/defend_arrow_tail.png">
                 </div>
             </div>
-            <img id="def_result_img" class="ml-1 scale-x-[-1] w-16 h-auto" src="assets/images/sprites/Felheim/soldier.png">
+            <img id="def_result_img" class="ml-1 scale-x-[-1] w-16 h-auto" alt="Defending unit results" src="assets/images/sprites/Felheim/soldier.png">
         </div>
     </main>
     
