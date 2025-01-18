@@ -637,6 +637,10 @@ video {
   height: 3.5rem;
 }
 
+.h-16 {
+  height: 4rem;
+}
+
 .h-28 {
   height: 7rem;
 }
@@ -659,10 +663,6 @@ video {
 
 .h-\[6\.625rem\] {
   height: 6.625rem;
-}
-
-.h-auto {
-  height: auto;
 }
 
 .h-fit {
@@ -785,14 +785,6 @@ video {
   gap: 1rem;
 }
 
-.self-start {
-  align-self: flex-start;
-}
-
-.self-end {
-  align-self: flex-end;
-}
-
 .overflow-y-auto {
   overflow-y: auto;
 }
@@ -883,6 +875,11 @@ video {
   padding-right: 1rem;
 }
 
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .pb-3 {
   padding-bottom: 0.75rem;
 }
@@ -943,6 +940,23 @@ video {
 
 .opacity-60 {
   opacity: 0.6;
+}
+
+.blur {
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 /*
@@ -1096,6 +1110,7 @@ input:checked + .slider:before {
 */
 
 body {
+  background-color: #ad855a;
   background-image: url(../assets/images/wargrooveTile.png);
   image-rendering: pixelated;
   /* Makes sure the image looks crisp at any scale */

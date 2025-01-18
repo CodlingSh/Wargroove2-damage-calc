@@ -139,6 +139,7 @@ input:checked + .slider:before {
 */
 
 body {
+    background-color: #ad855a;
     background-image: url(../assets/images/wargrooveTile.png);
     image-rendering: pixelated;  /* Makes sure the image looks crisp at any scale */
     image-rendering: crisp-edges; /* Fallback for older browsers */
