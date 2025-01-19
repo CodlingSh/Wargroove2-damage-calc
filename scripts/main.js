@@ -123,11 +123,11 @@ function calculateDamage() {
     let atkDamage = null;
     let defDamage = null;
 
-    // Remove defences for air units
-    if (formState.attackUnit.unitType === "air") {
+    // Remove defences for air units and buildings
+    if (formState.attackUnit.unitType === "air" || formState.attackUnit.unitType === "building") {
         atkTerrain = 0;
     }
-    if (formState.defendUnit.unitType === "air") {
+    if (formState.defendUnit.unitType === "air" || formState.defendUnit.unitType === "building") {
         defTerrain = 0;
     }
 
@@ -141,7 +141,12 @@ function calculateDamage() {
 
     // Find the damage attacker will do to the enemy
     defDamage = Math.round(atkPower * atkCritical * (atkHealth / 100) * multiplier * (1 - ((defHealth / 100) * defTerrain / 10)));
-    defHealth -= defDamage
+    
+    if (formState.defendUnit.unitType != "building") {
+        defHealth -= defDamage;
+        console.log("not a building");
+    }
+
     if (defHealth <= 0) {
         console.log("Def health is less than 0")
         atkDamage = 0;
